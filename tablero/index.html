@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tablero de agentes</title>
+<style>
+  :root {
+    --fondo: #f6f5f1; --panel: #ffffff; --tinta: #1d2327; --tenue: #5c666e;
+    --borde: #dcd9d0; --acento: #0b6e6e; --sobre-acento: #ffffff; --suave: #e6f1f0;
+    --hecho: #0b6e6e; --hipotesis: #8a5a00; --propuesta: #5b3fa0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fondo: #14181a; --panel: #1d2326; --tinta: #e8eaeb; --tenue: #9aa5ac;
+      --borde: #323a3f; --acento: #4fc0bd; --sobre-acento: #06201f; --suave: #1f3231;
+      --hecho: #4fc0bd; --hipotesis: #e0b050; --propuesta: #b39df0;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--fondo); color: var(--tinta);
+    font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 64px; }
+  header { display: flex; flex-wrap: wrap; gap: 16px; align-items: end; justify-content: space-between; margin-bottom: 24px; }
+  h1 { font-size: 1.6rem; margin: 0; letter-spacing: -0.01em; }
+  h2 { font-size: 1.05rem; margin: 40px 0 12px; }
+  h3 { font-size: 1.1rem; margin: 0; }
+  p { margin: 0; }
+  .tenue { color: var(--tenue); font-size: 0.9rem; }
+  button { font: inherit; cursor: pointer; border-radius: 8px; border: 1px solid var(--borde);
+    background: var(--panel); color: var(--tinta); padding: 8px 14px; }
+  button:hover { border-color: var(--acento); }
+  button.principal { background: var(--acento); color: var(--sobre-acento); border-color: var(--acento); font-weight: 600; }
+  button:focus-visible, textarea:focus-visible, summary:focus-visible { outline: 2px solid var(--acento); outline-offset: 2px; }
+  .rejilla { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+  .tarjeta { background: var(--panel); border: 1px solid var(--borde); border-radius: 12px; padding: 18px;
+    display: flex; flex-direction: column; gap: 12px; }
+  .tarjeta .cabeza { display: flex; gap: 10px; align-items: baseline; }
+  .numero { color: var(--acento); font-weight: 700; font-variant-numeric: tabular-nums; }
+  textarea { width: 100%; min-height: 84px; resize: vertical; font: inherit; color: inherit;
+    background: var(--fondo); border: 1px solid var(--borde); border-radius: 8px; padding: 8px 10px; }
+  .fila { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  details { border-top: 1px solid var(--borde); padding-top: 10px; }
+  summary { cursor: pointer; font-weight: 600; }
+  ul.docs { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 4px; }
+  ul.docs button { width: 100%; text-align: left; border: 0; background: none; padding: 6px 8px; border-radius: 6px; }
+  ul.docs button:hover { background: var(--suave); }
+  ul.docs .fecha { color: var(--tenue); font-variant-numeric: tabular-nums; margin-right: 8px; font-size: 0.85rem; }
+  .vacio { color: var(--tenue); font-size: 0.9rem; margin-top: 8px; }
+  .lista { background: var(--panel); border: 1px solid var(--borde); border-radius: 12px; padding: 14px 18px; }
+  .lista ul { margin: 0; padding-left: 20px; }
+  .lista li { margin: 4px 0; }
+  .etq { font-weight: 700; font-size: 0.8rem; letter-spacing: 0.03em; }
+  .etq.h { color: var(--hecho); } .etq.i { color: var(--hipotesis); } .etq.p { color: var(--propuesta); }
+  dialog { width: min(820px, calc(100vw - 32px)); max-height: 86vh; border: 1px solid var(--borde);
+    border-radius: 12px; background: var(--panel); color: var(--tinta); padding: 0; }
+  dialog::backdrop { background: rgba(0, 0, 0, 0.5); }
+  .dlg-cabeza { display: flex; justify-content: space-between; gap: 12px; align-items: start;
+    padding: 16px 18px; border-bottom: 1px solid var(--borde); position: sticky; top: 0; background: var(--panel); }
+  .dlg-cuerpo { padding: 16px 18px; display: grid; gap: 12px; }
+  pre { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; font: 0.9rem/1.55 ui-monospace, SFMono-Regular, Menlo, monospace; }
+  code { background: var(--suave); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+  #aviso { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); background: var(--tinta);
+    color: var(--fondo); padding: 8px 14px; border-radius: 8px; opacity: 0; transition: opacity 0.2s; pointer-events: none; }
+  #aviso.visible { opacity: 1; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div>
+      <h1>Tablero de agentes</h1>
+      <p class="tenue">Salud digital · actualizado <span id="generado"></span></p>
+    </div>
+    <button class="principal" id="btn-reunion">Reunión</button>
+  </header>
+
+  <section class="rejilla" id="agentes" aria-label="Agentes"></section>
+
+  <h2>Reglas</h2>
+  <div class="lista"><ul>
+    <li>Toda afirmación con fuente y fecha, separada en
+      <span class="etq h">[HECHO]</span>, <span class="etq i">[HIPÓTESIS]</span> o <span class="etq p">[PROPUESTA]</span>.</li>
+    <li>Ningún indicador sin respaldo del benchmark.</li>
+    <li>Nada se sobrescribe: cada producción es un archivo nuevo y fechado.</li>
+  </ul></div>
+
+  <h2>Mapa de capacidades <span class="tenue">· propuesta inicial, se corrige en <code>perfil/capacidades.md</code></span></h2>
+  <div class="lista"><ul id="capacidades"></ul></div>
+</main>
+
+<dialog id="dlg">
+  <div class="dlg-cabeza">
+    <div><h3 id="dlg-titulo"></h3><p class="tenue" id="dlg-sub"></p></div>
+    <button id="dlg-cerrar" aria-label="Cerrar">Cerrar</button>
+  </div>
+  <div class="dlg-cuerpo" id="dlg-cuerpo"></div>
+</dialog>
+<div id="aviso" role="status"></div>
+
+<script>
+const DATOS = {"generado": "2026-11-11 02:32", "agentes": [{"id": "actualizador", "nombre": "Actualizador", "hace": "Busca en todos los ámbitos de salud digital y resume en qué está cada uno.", "carpetas": ["actualizador"], "ejemplo": "¿Qué cambió este mes en interoperabilidad en América Latina?", "documentos": []}, {"id": "gestor-cargo", "nombre": "Gestor del cargo", "hace": "Apila tus cargas de trabajo, las contrasta con tus horas reales y levanta riesgos.", "carpetas": ["gestor-cargo"], "ejemplo": "Apila mis cargas de esta semana y dime qué no cabe.", "documentos": []}, {"id": "benchmark", "nombre": "Benchmark", "hace": "Compara la docencia en salud digital en el mundo, a todo nivel.", "carpetas": ["benchmark"], "ejemplo": "Compara los magísteres de informática en salud de la región.", "documentos": []}, {"id": "brechas-indicadores", "nombre": "Brechas e indicadores", "hace": "Convierte el benchmark en brechas, indicadores y necesidades concretas.", "carpetas": ["brechas-indicadores"], "ejemplo": "¿Qué brechas muestra el último benchmark en evaluación por competencias?", "documentos": []}, {"id": "guia", "nombre": "Guía", "hace": "Lee a todos, te orienta en el cargo, fija los indicadores a cumplir y levanta el acta.", "carpetas": ["guia", "actas"], "ejemplo": "¿Qué hago primero este mes y qué dejo de hacer?", "documentos": []}, {"id": "trayectoria", "nombre": "Trayectoria", "hace": "Cuida tu proyecto a 10 años: doctorado, publicaciones y posicionamiento regional.", "carpetas": ["trayectoria"], "ejemplo": "¿Qué hito de mi doctorado lleva más tiempo detenido?", "documentos": []}], "actas": [], "capacidades": [{"nombre": "Investigación y publicación", "detalle": ""}, {"nombre": "Dirección académica y gobernanza", "detalle": ""}, {"nombre": "Diseño curricular y evaluación por competencias", "detalle": ""}, {"nombre": "Actualización técnica", "detalle": "Interoperabilidad, IA clínica, datos, regulación."}, {"nombre": "Consultoría y posicionamiento regional", "detalle": ""}, {"nombre": "Delegar y gestionar la carga", "detalle": ""}]};
+
+const $ = (id) => document.getElementById(id);
+function el(tag, attrs = {}, ...hijos) {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === "class") n.className = v;
+    else if (k.startsWith("on")) n.addEventListener(k.slice(2), v);
+    else n.setAttribute(k, v);
+  }
+  n.append(...hijos);
+  return n;
+}
+
+function avisar(texto) {
+  const a = $("aviso");
+  a.textContent = texto;
+  a.classList.add("visible");
+  clearTimeout(avisar.t);
+  avisar.t = setTimeout(() => a.classList.remove("visible"), 2200);
+}
+
+async function copiar(texto) {
+  try {
+    await navigator.clipboard.writeText(texto);
+  } catch {
+    const t = el("textarea");
+    t.value = texto;
+    document.body.append(t);
+    t.select();
+    document.execCommand("copy");
+    t.remove();
+  }
+  avisar("Copiado. Pégalo en Claude Code.");
+}
+
+function abrir(titulo, sub, ...cuerpo) {
+  $("dlg-titulo").textContent = titulo;
+  $("dlg-sub").textContent = sub;
+  $("dlg-cuerpo").replaceChildren(...cuerpo);
+  if (!$("dlg").open) $("dlg").showModal();
+}
+
+function verDocumento(d) {
+  const sub = d.ruta + (d.reemplaza ? " · reemplaza a " + d.reemplaza : "");
+  abrir(d.titulo, sub, el("pre", {}, d.texto));
+}
+
+function listaDocs(docs, vacio) {
+  if (!docs.length) return el("p", { class: "vacio" }, vacio);
+  return el("ul", { class: "docs" }, ...docs.map((d) =>
+    el("li", {}, el("button", { onclick: () => verDocumento(d) },
+      el("span", { class: "fecha" }, d.fecha), d.titulo))));
+}
+
+function tarjeta(a, i) {
+  const pregunta = el("textarea", { placeholder: a.ejemplo, "aria-label": "Consulta para " + a.nombre });
+  const consultar = () => {
+    const q = pregunta.value.trim() || a.ejemplo;
+    copiar(`Usa el agente ${a.id} para responder: ${q}`);
+  };
+  const ultimo = a.documentos[0];
+  return el("article", { class: "tarjeta" },
+    el("div", { class: "cabeza" }, el("span", { class: "numero" }, String(i + 1)), el("h3", {}, a.nombre)),
+    el("p", {}, a.hace),
+    pregunta,
+    el("div", { class: "fila" },
+      el("button", { class: "principal", onclick: consultar }, "Consultar"),
+      el("span", { class: "tenue" }, ultimo ? "Último: " + ultimo.fecha : "Aún sin producción")),
+    el("details", {},
+      el("summary", {}, `Carpeta (${a.documentos.length})`),
+      listaDocs(a.documentos, "Vacía. Se llena cuando le consultes o en la primera reunión.")));
+}
+
+function reunion() {
+  abrir("Reunión", "Cada agente informa y el Guía levanta el acta",
+    el("p", {}, "Actualizador, Gestor del cargo, Benchmark y Trayectoria informan primero; ",
+      "luego Brechas e indicadores; al final el Guía lee todo y escribe el acta."),
+    el("div", { class: "fila" },
+      el("button", { class: "principal", onclick: () => copiar("/reunion") }, "Convocar reunión"),
+      el("span", { class: "tenue" }, "Copia "), el("code", {}, "/reunion"),
+      el("span", { class: "tenue" }, " para pegarlo en Claude Code")),
+    el("h3", {}, "Actas"),
+    listaDocs(DATOS.actas, "Todavía no hay actas."));
+}
+
+$("generado").textContent = DATOS.generado;
+$("agentes").append(...DATOS.agentes.map(tarjeta));
+$("capacidades").append(...DATOS.capacidades.map((c) =>
+  el("li", {}, el("strong", {}, c.nombre), c.detalle ? " — " + c.detalle : "")));
+$("btn-reunion").addEventListener("click", reunion);
+$("dlg-cerrar").addEventListener("click", () => $("dlg").close());
+$("dlg").addEventListener("click", (e) => { if (e.target === $("dlg")) $("dlg").close(); });
+</script>
+</body>
+</html>

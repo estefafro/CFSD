@@ -1,0 +1,44 @@
+[
+  {
+    "id": "actualizador",
+    "nombre": "Actualizador",
+    "hace": "Busca en todos los ámbitos de salud digital y resume en qué está cada uno.",
+    "carpetas": ["actualizador"],
+    "ejemplo": "¿Qué cambió este mes en interoperabilidad en América Latina?"
+  },
+  {
+    "id": "gestor-cargo",
+    "nombre": "Gestor del cargo",
+    "hace": "Apila tus cargas de trabajo, las contrasta con tus horas reales y levanta riesgos.",
+    "carpetas": ["gestor-cargo"],
+    "ejemplo": "Apila mis cargas de esta semana y dime qué no cabe."
+  },
+  {
+    "id": "benchmark",
+    "nombre": "Benchmark",
+    "hace": "Compara la docencia en salud digital en el mundo, a todo nivel.",
+    "carpetas": ["benchmark"],
+    "ejemplo": "Compara los magísteres de informática en salud de la región."
+  },
+  {
+    "id": "brechas-indicadores",
+    "nombre": "Brechas e indicadores",
+    "hace": "Convierte el benchmark en brechas, indicadores y necesidades concretas.",
+    "carpetas": ["brechas-indicadores"],
+    "ejemplo": "¿Qué brechas muestra el último benchmark en evaluación por competencias?"
+  },
+  {
+    "id": "guia",
+    "nombre": "Guía",
+    "hace": "Lee a todos, te orienta en el cargo, fija los indicadores a cumplir y levanta el acta.",
+    "carpetas": ["guia", "actas"],
+    "ejemplo": "¿Qué hago primero este mes y qué dejo de hacer?"
+  },
+  {
+    "id": "trayectoria",
+    "nombre": "Trayectoria",
+    "hace": "Cuida tu proyecto a 10 años: doctorado, publicaciones y posicionamiento regional.",
+    "carpetas": ["trayectoria"],
+    "ejemplo": "¿Qué hito de mi doctorado lleva más tiempo detenido?"
+  }
+]
