@@ -11,4 +11,4 @@ Formato sugerido, una carga por línea:
 
 ## Cargas vigentes
 
-(vacío)
+- Presentación de 20 minutos y 3 preguntas de palo blanco para el webinar internacional "Educación, tecnología y cuidado" (USS, Chile–Colombia), bloque 18:50–19:10 | pide: Vinculación con el Medio, Escuela de Enfermería USS | vence: 2026-11-11 | horas estimadas: sin dato | capacidad: Consultoría y posicionamiento regional | delegable: no
