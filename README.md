@@ -1,4 +1,4 @@
-# CFSD · Sistema de agentes de salud digital
+# Sistema de agentes de salud digital
 
 Seis agentes que trabajan para la titular de un cargo académico en salud digital, un tablero para
 consultarlos y una reunión donde cada uno informa y el Guía levanta el acta.
