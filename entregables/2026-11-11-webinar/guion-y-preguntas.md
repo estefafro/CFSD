@@ -15,9 +15,9 @@ El guion completo de cada lámina está en las notas del orador del archivo `pre
 | 4 | Muchos datos, poco uso | 1:30 | 50 petabytes y 97% sin usar, dicho como estimación. |
 | 5 | Del registro a la decisión | 2:00 | Los cuatro peldaños, hasta el soporte a la decisión clínica. |
 | 6 | Tus registros salvan vidas | 2:00 | 631–875 registros por turno; CONCERN y el 35,6%. |
-| 7 | Ruta Panamericana | 2:30 | Bogotá 2024 → San Salvador 2025 → sesión OPS 2026 presidida por Chile. |
+| 7 | Ruta Panamericana | 2:30 | Bogotá 2024 → San Salvador 2025 → sesión OPS 2026 encabezada por Chile. Barbados pidió reformar los currículos de enfermería. |
 | 8 | Las reglas | 1:30 | RDA en Colombia; Ley 21.719 en Chile. |
-| 9 | ¿Qué hay que saber? | 2:00 | 129 países; OMS junio 2026; TIGER 2026; CENS. |
+| 9 | ¿Qué hay que saber? | 2:00 | OMS junio 2026: 35 marcos, 10 grupos, ninguno de América Latina ni de IA. TIGER 2026 y CENS. |
 | 10 | Todos alfabetizados | 2:00 | Usuario, referente, especialista. Mensaje central. |
 | 11 | USS | 2:00 | Asignatura, electivo, iniciativa transversal. |
 | 12 | ¿En qué peldaño estás? | 1:30 | **Interacción en el chat** y cierre. |
@@ -39,17 +39,31 @@ Respuesta: No. Hay tres niveles. Todas y todos necesitan alfabetización: regist
 Respuesta: El mejor ejemplo es el de enfermería que mostré: el sistema que redujo la mortalidad aprendió de cuándo y cómo registra una enfermera preocupada. Sin ese criterio no hay sistema. Lo que cambia es que ahora hay que saber cuándo confiar y cuándo no: los algoritmos se equivocan y heredan los sesgos de los datos. Por eso "cuestionar" es una competencia, no una actitud.
 
 **3. "Soy estudiante (o docente): ¿por dónde empiezo mañana?"**
-Respuesta: Tres pasos. Uno, tomar en serio el registro: es el primer peldaño y ya lo hacen. Dos, formarse: en la USS viene la asignatura de salud digital y el electivo con tecnología; y la OPS tiene un programa abierto de alfabetización digital. Tres, mirar la Ruta Panamericana y los proyectos de cada país: ahí van a estar los trabajos y las preguntas de investigación de los próximos años.
+Respuesta: Tres pasos. Uno, tomar en serio el registro: es el primer peldaño y ya lo hacen. Dos, formarse: en la USS viene la asignatura de salud digital y el electivo con tecnología; y la OPS tiene el Programa de Alfabetización Digital para el Personal del Sector Salud, con cursos libres y gratuitos (paho.org/es/programa-alfabetizacion-digital). Tres, mirar la Ruta Panamericana y los proyectos de cada país: ahí van a estar los trabajos y las preguntas de investigación de los próximos años.
 
-Reserva, por si alguna ya salió: **"¿Qué puede aprender Chile de Colombia, y Colombia de Chile?"** Colombia ya hizo obligatorio el Resumen Digital de Atención; Chile preside hoy la discusión regional de la Ruta. Son dos caminos distintos hacia lo mismo, y la formación puede compartirse antes que los sistemas.
+Reserva, por si alguna ya salió: **"¿Qué puede aprender Chile de Colombia, y Colombia de Chile?"** Colombia ya puso plazo a todas sus instituciones para integrarse al Resumen Digital de Atención; Chile preside hoy la discusión regional de la Ruta. Son dos caminos distintos hacia lo mismo, y la formación puede compartirse antes que los sistemas.
 
-## Antes de proyectar: lo que hay que revisar
+## Estado de la verificación
 
-Los agentes trabajaron hoy con la red restringida: verificaron con extractos del buscador, no abriendo cada documento. Detalle y fuentes en `produccion/actualizador/2026-11-11-1333-webinar-ruta-panamericana.md` y `produccion/benchmark/2026-11-11-1334-marcos-competencias-salud-digital.md`.
+Segunda pasada de los agentes, ya con la red abierta, leyendo los documentos originales. Detalle y fuentes en `produccion/actualizador/2026-11-11-1402-webinar-verificacion-primaria.md` y `produccion/benchmark/2026-11-11-1401-marcos-competencias-verificacion-primaria.md`.
 
-- **Ley 21.719 (lámina 8):** revisar hoy el Boletín 18.623-07. Al cierre del informe, el Senado había aprobado postergar al 15 de octubre de 2027 y la Cámara lo tenía en comisión.
-- **Ruta Panamericana (lámina 7):** decir "más de 20 países"; las fuentes dan 22, 18 o 20 según el momento. No afirmar que la Ruta tiene un componente formal de formación: no se encontró.
-- **50 petabytes y 97% (lámina 4):** es una estimación muy repetida, sin dato primario detrás. Decirla como estimación.
-- **OMS, junio 2026 (lámina 9):** el documento existe, pero analiza marcos de otros; no es "el marco de la OMS". No usar las cifras de la versión anterior (35 marcos, 10 clústeres, 0 países latinoamericanos, ningún clúster de IA): no quedaron verificadas.
-- **Lámina 11 (USS):** el texto viene de tu presentación anterior; agrega un dato propio si lo tienes.
-- **Verificado en PubMed:** las cifras de la lámina 6 (Collins 2018; Rossetti 2025, https://doi.org/10.1038/s41591-025-03609-7).
+**Confirmado en la fuente original**
+- Lámina 6: 631–875 registros por turno (Collins 2018) y 35,6% menos riesgo de muerte (Rossetti 2025, https://doi.org/10.1038/s41591-025-03609-7), en PubMed.
+- Lámina 7: sesión especial en el 63.º Consejo Directivo de la OPS encabezada por la ministra de Salud de Chile (Minsal, 28 de septiembre de 2026); certificado digital de fiebre amarilla (OPS).
+- Lámina 8, Colombia: Resolución 1888 de 2025, plazo de seis meses hasta el 15 de abril de 2026 (Minsalud).
+- Lámina 9: documento de la OMS de junio de 2026: 35 marcos, 10 grupos de competencias, 20 de 39 estudios de enfermería, ningún marco nacional de América Latina, ningún grupo de IA, literatura 2012-2022 en inglés. TIGER 2026 recomienda IA en todos los roles de enfermería. CENS versión 2.0 (junio de 2024), 103 competencias.
+- De palabra: 129 países con estrategia nacional y Estrategia mundial extendida a 2027 (OMS, 23 de mayo de 2025); programa de alfabetización digital de la OPS, libre y gratuito.
+
+**Solo vía buscador (el sitio no dejó entrar): decir "según…"**
+- Lanzamiento en Bogotá en octubre de 2024 y conectatón de San Salvador en 2025: "según el BID". Por eso la lámina ya no muestra números de países; el único valor de la OPS es "más de 20 países".
+- Ley 21.719: vigencia el 1 de diciembre de 2026; el Senado aprobó el 28 de octubre postergarla al 15 de octubre de 2027; la Cámara la aprobó en general en comisión el 5 de noviembre y pasó a Hacienda. **Abre hoy el Boletín 18.623-07 en camara.cl desde tu navegador** y di "al cierre de esta presentación".
+
+**Cuidados al hablar**
+- El documento de la OMS no es "el marco de la OMS": analiza marcos de otros, y la OMS declara pendiente el propio.
+- TIGER aparece como el marco más usado, pero citado por solo tres estudios: no exagerarlo.
+- La Ruta nombra el capital humano entre lo que apoya; no tiene un programa de formación propio. No decir "pilar".
+- CENS: el documento dice 103 competencias; la portada de cens.cl dice hoy 104. La lámina no muestra el número; si lo dices, cita "versión 2.0, junio de 2024".
+- Los tres roles de la IMIA (usuario, generalista, especialista) se confirmaron solo en el resumen del artículo; la lámina usa "referente" en lugar de "generalista" como adaptación.
+- Programa de la OPS: está pensado para trabajadores de salud; no prometer certificado a estudiantes.
+- 50 petabytes y 97% (lámina 4): estimación repetida, sin dato primario. Decirla como estimación.
+- Lámina 11 (USS): el texto viene de tu presentación anterior; agrega un dato propio si lo tienes.
