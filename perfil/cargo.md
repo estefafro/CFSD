@@ -11,6 +11,13 @@
 - Compromisos formales del cargo (lo que la institución espera y cuándo):
 - Horas reales disponibles por semana, y cuántas son protegidas para el proyecto a 10 años:
 
+## Contexto institucional
+
+- La propuesta de decreto que crea el Departamento Nacional de Salud Digital se presentó al Consejo de Facultad el 2026-11-12 y está a semanas de llegar al Consejo Superior. (Fuente: presentación al Consejo de Facultad y titular del cargo, conversación 2026-11-14.)
+- Tiene el respaldo de la Facultad: asiste a todos los consejos y cuenta con un equipo formado por directivos. (Fuente: titular del cargo, conversación 2026-11-14.)
+- Por qué el Departamento importa ahora: el próximo año no quiere seguir absorbiendo sola los requerimientos que le llegan (electivos, clases); quiere un equipo. (Misma fuente.)
+- Quiere que su modelo de competencias sea la línea de investigación basal del Departamento, basada en la revisión de la OMS de junio de 2026, y que siga funcionando aunque ella no esté. (Misma fuente.)
+
 ## Proyecto a 10 años
 
 - Doctorado (programa, estado, hitos):
