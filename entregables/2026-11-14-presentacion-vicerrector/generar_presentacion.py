@@ -614,6 +614,38 @@ ficha("sedes", "Artículo 11", "Coordinaciones de Sede",
        ("Levanta", "Los requerimientos de las carreras y los académicos que pueden sumarse."),
        ("Informa", "A las Áreas y a la Dirección, e integra el Comité Consultivo.")])
 
+# ---------------------------------------------------------------- Artículos y organigrama
+sl = base("EL DEPARTAMENTO POR DENTRO", "Cada artículo, en su lugar del organigrama")
+filas_art = [("1 y 2", "Objetivo general y alcance nacional y transversal", "Todo el Departamento, en todas las sedes", "obj"),
+             ("3 y 4", "Pregrado, postgrado y educación continua", "Área de Docencia", "obj"),
+             ("5 y 6", "Investigación y vinculación con el medio", "Área de Proyectos", "obj"),
+             ("7", "Integración y dependencia", "Decanato FCCS", "org"),
+             ("8", "Dirección Nacional", "Dirección Nacional", "org"),
+             ("9", "Comité Consultivo", "Comité Consultivo", "org"),
+             ("10", "Las Áreas", "Área de Docencia y Área de Proyectos", "org"),
+             ("11", "Coordinaciones de Sede", "Santiago, Concepción, Valdivia y Puerto Montt", "org"),
+             ("12", "Designación", "Jefaturas de Área y Coordinaciones de Sede", "org"),
+             ("13", "Integrantes", "Académicos adscritos y de otras unidades", "org")]
+texto(sl, 0.6, 1.5, 1.2, 0.26, "ARTÍCULO", 10, BLUE, True)
+texto(sl, 1.95, 1.5, 4.6, 0.26, "QUÉ ESTABLECE", 10, BLUE, True)
+texto(sl, 7.55, 1.5, 5.1, 0.26, "DÓNDE ESTÁ EN EL ORGANIGRAMA", 10, BLUE, True)
+hf = 0.418
+for i, (num, que, donde, grupo) in enumerate(filas_art):
+    y = 1.82 + i * hf
+    obj = grupo == "obj"
+    forma(sl, MSO_SHAPE.ROUNDED_RECTANGLE, 0.6, y, 1.2, hf - 0.07, num, GOLD if obj else NAVY, BLANCO, 11, True)
+    forma(sl, MSO_SHAPE.ROUNDED_RECTANGLE, 1.95, y, 4.9, hf - 0.07, que, ORO_PALIDO if obj else "F4F7FB", NAVY, 11)
+    c = sl.shapes.add_connector(MSO_CONNECTOR.STRAIGHT, Inches(6.9), Inches(y + (hf - 0.07) / 2), Inches(7.5), Inches(y + (hf - 0.07) / 2))
+    c.line.color.rgb = rgb(NAVY)
+    c.line.width = Pt(1.5)
+    ln = c.line._get_or_add_ln()
+    ln.append(etree.SubElement(ln, qn("a:tailEnd"), {"type": "triangle", "w": "med", "len": "med"}))
+    forma(sl, MSO_SHAPE.ROUNDED_RECTANGLE, 7.55, y, 5.17, hf - 0.07, donde, "E4ECF7", NAVY, 11, True)
+for j, (t, c_) in enumerate((("Objetivos: para qué existe", GOLD), ("Organización: cómo funciona", NAVY))):
+    forma(sl, MSO_SHAPE.RECTANGLE, 0.6 + j * 2.6, 6.16, 0.22, 0.14, "", c_)
+    texto(sl, 0.9 + j * 2.6, 6.1, 2.3, 0.26, t, 9.5, GRIS)
+texto(sl, 6.2, 6.1, 6.52, 0.26, "Más tres artículos transitorios, que ordenan la instalación gradual.", 9.5, GRIS, italic=True, align=PP_ALIGN.RIGHT)
+
 # ---------------------------------------------------------------- Orden: ciclo, cifras, macro-micro, línea basal · articulación · fichas
 p_art = portadilla("Cómo se articula", "Tres maneras de mostrarlo")
 p_dep = portadilla("El Departamento por dentro", "Estructura y relaciones")
@@ -621,9 +653,9 @@ p_res = portadilla("Respaldo", "Cada unidad: qué dice el decreto y qué hace")
 ids = prs.slides._sldIdLst
 CIERRE = [l for l in prs.slide_layouts if l.name.strip() == "CIERRE"][0]
 prs.slides.add_slide(CIERRE)
-el = list(ids)  # 0 portada, 1 organigrama, 2-4 swimlanes, 5 ciclo, 6 cifras, 7 macro-micro, 8 línea basal, 9-13 fichas, 14-16 portadillas, 17 cierre
-# el cierre va después del organigrama; el respaldo queda detrás del cierre
-orden = [el[0], el[5], el[6], el[7], el[8], el[14], el[2], el[3], el[4], el[15], el[1], el[17], el[16]] + el[9:14]
+el = list(ids)  # 0 portada, 1 organigrama, 2-4 swimlanes, 5 ciclo, 6 cifras, 7 macro-micro, 8 línea basal, 9-13 fichas, 14 artículos, 15-17 portadillas, 18 cierre
+# organigrama, artículos y cierre; el respaldo queda detrás del cierre
+orden = [el[0], el[5], el[6], el[7], el[8], el[15], el[2], el[3], el[4], el[16], el[1], el[14], el[18], el[17]] + el[9:14]
 assert len(orden) == len(el)
 for e in el:
     ids.remove(e)
