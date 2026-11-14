@@ -17,12 +17,25 @@ prs = Presentation(SRC)
 ids = prs.slides._sldIdLst
 for sld in list(ids):
     titulo = prs.part.related_part(sld.rId).slide.shapes.title
+    _sl = prs.part.related_part(sld.rId).slide
+    if _sl.slide_layout.name.strip() == "PORTADA":
+        continue  # se conserva la portada original, con texto nuevo
     if titulo is not None and titulo.text_frame.text.startswith("Organigrama"):
         continue  # se conserva el organigrama matricial original
     prs.part.drop_rel(sld.rId)
     ids.remove(sld)
-assert len(ids) == 1, "no se encontró el organigrama original"
-_org = prs.part.related_part(ids[0].rId).slide
+assert len(ids) == 2, "no se encontraron la portada y el organigrama originales"
+# renombrar las láminas conservadas para que no choquen con los nombres de las nuevas
+from pptx.opc.packuri import PackURI
+for _i, _sld in enumerate(ids, start=1):
+    prs.part.related_part(_sld.rId).partname = PackURI("/ppt/slides/slide%d.xml" % _i)
+_portada = prs.part.related_part(ids[0].rId).slide
+_sub = [ph for ph in _portada.placeholders if ph.placeholder_format.idx == 1][0]
+_runs = [r for par in _sub.text_frame.paragraphs for r in par.runs]
+assert len(_runs) == 2, len(_runs)
+_runs[0].text = "Formación, articulación y línea de investigación"
+_runs[1].text = "Vicerrectoría Académica · noviembre de 2026"
+_org = prs.part.related_part(ids[1].rId).slide
 _cambios = {"Área IVP": "Área de Proyectos", "investigación · vinculación con el medio · proyectos": "línea basal · investigación · vinculación con el medio",
             "seguimiento · análisis comparado · propuestas": "pregrado · postgrado · educación continua"}
 _hechos = 0
@@ -606,8 +619,11 @@ p_art = portadilla("Cómo se articula", "Tres maneras de mostrarlo")
 p_dep = portadilla("El Departamento por dentro", "Estructura y relaciones")
 p_res = portadilla("Respaldo", "Cada unidad: qué dice el decreto y qué hace")
 ids = prs.slides._sldIdLst
-el = list(ids)  # 0 organigrama original, 1-3 swimlanes, 4 ciclo, 5 cifras, 6 macro-micro, 7 línea basal, 8-12 fichas, 13-15 portadillas
-orden = [el[4], el[5], el[6], el[7], el[13], el[1], el[2], el[3], el[14], el[0], el[15]] + el[8:13]
+CIERRE = [l for l in prs.slide_layouts if l.name.strip() == "CIERRE"][0]
+prs.slides.add_slide(CIERRE)
+el = list(ids)  # 0 portada, 1 organigrama, 2-4 swimlanes, 5 ciclo, 6 cifras, 7 macro-micro, 8 línea basal, 9-13 fichas, 14-16 portadillas, 17 cierre
+# el cierre va después del organigrama; el respaldo queda detrás del cierre
+orden = [el[0], el[5], el[6], el[7], el[8], el[14], el[2], el[3], el[4], el[15], el[1], el[17], el[16]] + el[9:14]
 assert len(orden) == len(el)
 for e in el:
     ids.remove(e)
