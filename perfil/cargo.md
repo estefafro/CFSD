@@ -21,6 +21,9 @@
 - Dotación, responsables de Docencia y de las Coordinaciones de Sede, horas de investigación y plazo de instalación ya fueron conversados en el Consejo de Facultad. El Vicerrector Académico verá el borrador del decreto y aportará su experiencia institucional; después se ajusta y se presenta. (Fuente: titular del cargo, conversación 2026-11-14.)
 - Su contrato contempla horas de dedicación para dirección, investigación y academia. (Misma fuente.) Falta el detalle de cuántas son para cada una.
 
+- Estructura vigente del Departamento: dos Áreas con subáreas. Área de Docencia: pregrado, postgrado y educación continua. Área de Proyectos (antes llamada Área IVP): línea basal, investigación y vinculación con el medio. (Fuente: titular del cargo, conversación 2026-11-14.)
+- En el decreto no se fijan plazos ni fechas: "es atarse de manos". (Misma fuente.)
+
 ## Proyecto a 10 años
 
 - Declaró en el Consejo de Facultad que quiere hacer un doctorado y que el modelo de competencias le interesa como línea. Le acomoda decidir el programa antes de marzo de 2027. (Fuente: titular del cargo, conversación 2026-11-14.)

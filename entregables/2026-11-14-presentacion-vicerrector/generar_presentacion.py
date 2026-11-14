@@ -22,6 +22,20 @@ for sld in list(ids):
     prs.part.drop_rel(sld.rId)
     ids.remove(sld)
 assert len(ids) == 1, "no se encontró el organigrama original"
+_org = prs.part.related_part(ids[0].rId).slide
+_cambios = {"Área IVP": "Área de Proyectos", "investigación · vinculación con el medio · proyectos": "línea basal · investigación · vinculación con el medio",
+            "seguimiento · análisis comparado · propuestas": "pregrado · postgrado · educación continua"}
+_hechos = 0
+for _sh in _org.shapes:
+    if _sh.has_text_frame:
+        for _p in _sh.text_frame.paragraphs:
+            for _r in _p.runs:
+                if _r.text in _cambios:
+                    _r.text = _cambios[_r.text]
+                    _hechos += 1
+        if _sh.name == "Área IVP":
+            _sh.name = "Área de Proyectos"
+assert _hechos == 3, _hechos
 LAYOUT = [l for l in prs.slide_layouts if l.name.strip() == "INTERIOR"][0]
 
 
@@ -225,8 +239,8 @@ o_doc = caja(sl, xc[0], CA, "Necesidad formativa", w=1.8, h=0.38, borde=NAVY, fi
 o_vcm = caja(sl, xc[0], SE, "Necesidad del territorio", w=1.8, h=0.38, borde=GOLD, fill=BLANCO)
 o_inv = caja(sl, xc[0], OT, "Académicos y disciplinas", w=1.8, h=0.38, borde=BLUE, fill=BLANCO)
 d_doc = caja(sl, xc[1], DE - 0.41, "Área de Docencia: diseña y actualiza", w=1.9, h=0.36, fill=NAVY, color=BLANCO, size=9)
-d_inv = caja(sl, xc[1], DE, "Área IVP: líneas y postulaciones", w=1.9, h=0.36, fill=BLUE, color=BLANCO, size=9)
-d_vcm = caja(sl, xc[1], DE + 0.41, "Área IVP: iniciativas con las unidades de VcM", w=1.9, h=0.36, fill=GOLD, color=BLANCO, size=9)
+d_inv = caja(sl, xc[1], DE, "Área de Proyectos: investigación", w=1.9, h=0.36, fill=BLUE, color=BLANCO, size=9)
+d_vcm = caja(sl, xc[1], DE + 0.41, "Área de Proyectos: vinculación con el medio", w=1.9, h=0.36, fill=GOLD, color=BLANCO, size=9)
 dec = rombo(sl, xc[2], FA, "La Decana decide", w=1.6, h=0.62)
 v_doc = caja(sl, xc[3], VR - 0.36, "Vicerrectoría Académica", w=1.9, h=0.3, borde=NAVY, fill=BLANCO, size=9)
 v_inv = caja(sl, xc[3], VR, "VRID", w=1.9, h=0.3, borde=BLUE, fill=BLANCO, size=9)
@@ -263,7 +277,7 @@ tf.paragraphs[0].runs[0].text = "Departamento Nacional de Salud Digital"
 tf.paragraphs[0].runs[0].font.size = Pt(15)
 tf.paragraphs[0].runs[0].font.bold = True
 tf.paragraphs[0].runs[0].font.name = "Cambria"
-for t in ("", "Dirección Nacional", "Área de Docencia", "Área IVP", "Coordinaciones de Sede", "Comité Consultivo", "", "articula · decide dentro de sus materias · rinde cuenta"):
+for t in ("", "Dirección Nacional", "Área de Docencia", "Área de Proyectos", "Coordinaciones de Sede", "Comité Consultivo", "", "articula · decide dentro de sus materias · rinde cuenta"):
     p = tf.add_paragraph()
     p.alignment = PP_ALIGN.CENTER
     r = p.add_run()
@@ -374,7 +388,7 @@ niveles = [
     ("Área de Docencia", "pregrado · postgrado · educación continua", False,
      ["Consolida la información de las sedes", "Benchmarking nacional e internacional", "Creación y actualización de asignaturas y programas", "Calidad, trazabilidad, competencias y resultados de aprendizaje",
       "Eleva a la Dirección Nacional"]),
-    ("Área IVP", "investigación · vinculación · proyectos", False,
+    ("Área de Proyectos", "línea basal · investigación · vinculación con el medio", False,
      ["Capacidades, líneas y socios", "Fondos, convocatorias y referentes", "Formula proyectos e iniciativas", "Seguimiento de proyectos; centro de costos (en evaluación)",
       "Eleva a la Dirección Nacional"]),
     ("Coordinación de Sede", "nivel micro", False,
@@ -468,7 +482,7 @@ texto(sl, 3.98, 5.18, 5.1, 0.6, "Responde al artículo 3: un marco común de des
 panel(sl, 9.46, 1.55, 3.26, 4.35, ORO_PALIDO)
 texto(sl, 9.66, 1.68, 2.9, 0.3, "QUEDA ANDANDO PORQUE", 10, GOLD, True)
 texto(sl, 9.66, 1.98, 2.9, 0.62, "Es del Departamento, no de una persona", 15, NAVY, True, font="Cambria", anchor=MSO_ANCHOR.TOP)
-for j, t in enumerate(("La gestiona el Área IVP", "Protocolo e instrumentos documentados", "Datos en un repositorio del Departamento", "Las sedes levantan la información", "Estudiantes de pregrado y postgrado en tesis")):
+for j, t in enumerate(("La gestiona el Área de Proyectos", "Protocolo e instrumentos documentados", "Datos en un repositorio del Departamento", "Las sedes levantan la información", "Estudiantes de pregrado y postgrado en tesis")):
     forma(sl, MSO_SHAPE.ROUNDED_RECTANGLE, 9.66, 2.78 + j * 0.6, 2.86, 0.5, t, BLANCO, NAVY, 10, borde=GOLD)
 
 forma(sl, MSO_SHAPE.ROUNDED_RECTANGLE, 0.6, 6.03, 12.12, 0.5, "Productos: marco común de desempeños  ·  indicadores de competencias por sede  ·  publicaciones con afiliación al Departamento", NAVY, BLANCO, 11, True)
@@ -518,7 +532,7 @@ def organigrama(sl, foco):
     nodo("dir", 2.75, 2.68, 1.9, 0.52, "Dirección Nacional", 11)
     nodo("com", 4.75, 2.68, 1.3, 0.52, "Comité Consultivo", 9.5)
     nodo("doc", 1.75, 3.78, 2.0, 0.56, "Área de Docencia", 11)
-    nodo("ivp", 3.95, 3.78, 2.0, 0.56, "Área IVP", 11)
+    nodo("ivp", 3.95, 3.78, 2.0, 0.56, "Área de Proyectos", 11)
     for x, n in ((1.15, "Santiago"), (2.35, "Concepción"), (3.55, "Valdivia"), (4.75, "Puerto Montt")):
         nodo("sedes", x, 4.88, 1.1, 0.5, n, 9)
     texto(sl, 0.6, 5.2, 4.8, 0.25, "Coordinaciones de Sede", 9, NAVY if foco == "sedes" else GRIS, foco == "sedes", PP_ALIGN.CENTER)
@@ -571,13 +585,14 @@ ficha("doc", "Artículo 10", "Área de Docencia",
        ("Competencias y resultados de aprendizaje", "Cuida que tributen a los perfiles de egreso."),
        ("Eleva", "Consolida la información de las sedes y la entrega a la Dirección Nacional.")],
       pie="Trabaja en tres frentes: pregrado, postgrado y educación continua.")
-ficha("ivp", "Artículo 10", "Área IVP: investigación, vinculación con el medio y proyectos",
+ficha("ivp", "Artículo 10", "Área de Proyectos",
       "Gestiona la investigación, la vinculación con el medio y el desarrollo de proyectos del Departamento, en coordinación con las Vicerrectorías y unidades institucionales competentes.",
-      [("Líneas de investigación", "Las propone y organiza, con la línea basal de competencias como base."),
-       ("Fondos y proyectos", "Promueve postulaciones con financiamiento interno y externo."),
+      [("Línea basal", "Sostiene la línea de competencias digitales en salud como base del Departamento."),
+       ("Investigación", "Propone y organiza líneas; integra a estudiantes de pregrado y postgrado."),
        ("Vinculación con el medio", "Trabaja en conjunto con las unidades de la Universidad, la Facultad y las carreras."),
-       ("Estudiantes", "Los integra a la investigación, en pregrado y postgrado."),
-       ("Afiliación y difusión", "Hace visible la producción del Departamento.")])
+       ("Fondos y alianzas", "Promueve postulaciones con financiamiento interno y externo."),
+       ("Eleva", "Entrega resultados y afiliación a la Dirección Nacional.")],
+      pie="Trabaja en tres frentes: línea basal, investigación y vinculación con el medio.")
 ficha("sedes", "Artículo 11", "Coordinaciones de Sede",
       "En cada sede, un Coordinador o Coordinadora que depende de la Dirección Nacional y sigue los lineamientos técnicos de las Áreas. Representa al Departamento y vela por la equivalencia de la formación entre sedes.",
       [("Representa", "Es la cara del Departamento en la sede."),
