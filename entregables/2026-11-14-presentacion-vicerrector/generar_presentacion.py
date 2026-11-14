@@ -476,17 +476,17 @@ ln = c.line._get_or_add_ln()
 ln.append(etree.SubElement(ln, qn("a:tailEnd"), {"type": "triangle", "w": "med", "len": "med"}))
 texto(sl, 5.3, 2.36, 2.5, 0.22, "y se vuelve a medir", 9, GOLD, True, PP_ALIGN.CENTER, italic=True)
 forma(sl, MSO_SHAPE.ROUNDED_RECTANGLE, 3.98, 4.45, 5.1, 0.62, "Laboratorio: la asignatura Salud Digital, con 1.788 estudiantes de 4 carreras en 4 sedes", BLANCO, NAVY, 10.5, True, borde=NAVY)
-texto(sl, 3.98, 5.18, 5.1, 0.6, "Responde al artículo 3: un marco común de desempeños «sustentado en la investigación del Departamento y en los estándares internacionales».", 9.5, GRIS, italic=True, anchor=MSO_ANCHOR.TOP)
+forma(sl, MSO_SHAPE.ROUNDED_RECTANGLE, 3.98, 5.18, 5.1, 0.6, "Modelo propuesto: línea de investigación de Estefanía Fröhlich, con proyección doctoral", GOLD, BLANCO, 10.5, True)
 
 # 3. por qué queda andando
 panel(sl, 9.46, 1.55, 3.26, 4.35, ORO_PALIDO)
 texto(sl, 9.66, 1.68, 2.9, 0.3, "QUEDA ANDANDO PORQUE", 10, GOLD, True)
-texto(sl, 9.66, 1.98, 2.9, 0.62, "Es del Departamento, no de una persona", 15, NAVY, True, font="Cambria", anchor=MSO_ANCHOR.TOP)
-for j, t in enumerate(("La gestiona el Área de Proyectos", "Protocolo e instrumentos documentados", "Datos en un repositorio del Departamento", "Las sedes levantan la información", "Estudiantes de pregrado y postgrado en tesis")):
-    forma(sl, MSO_SHAPE.ROUNDED_RECTANGLE, 9.66, 2.78 + j * 0.6, 2.86, 0.5, t, BLANCO, NAVY, 10, borde=GOLD)
+texto(sl, 9.66, 1.98, 2.9, 0.85, "La línea es del Departamento; cada producto, de sus autores", 14, NAVY, True, font="Cambria", anchor=MSO_ANCHOR.TOP)
+for j, t in enumerate(("La gestiona el Área de Proyectos", "Protocolo e instrumentos documentados", "Datos en un repositorio del Departamento", "Las sedes levantan la información", "Tesis de pregrado, postgrado y doctorado")):
+    forma(sl, MSO_SHAPE.ROUNDED_RECTANGLE, 9.66, 2.95 + j * 0.57, 2.86, 0.47, t, BLANCO, NAVY, 10, borde=GOLD)
 
-forma(sl, MSO_SHAPE.ROUNDED_RECTANGLE, 0.6, 6.03, 12.12, 0.5, "Productos: marco común de desempeños  ·  indicadores de competencias por sede  ·  publicaciones con afiliación al Departamento", NAVY, BLANCO, 11, True)
-nota(sl, "La docencia produce los datos, la investigación los convierte en evidencia y la evidencia vuelve a la docencia.", y=6.6)
+forma(sl, MSO_SHAPE.ROUNDED_RECTANGLE, 0.6, 6.03, 12.12, 0.5, "Productos: marco común de desempeños  ·  indicadores de competencias por sede  ·  tesis y publicaciones con afiliación al Departamento", NAVY, BLANCO, 11, True)
+nota(sl, "Responde al artículo 3: un marco común de desempeños sustentado en la investigación del Departamento y en los estándares internacionales.", y=6.6)
 
 # ---------------------------------------------------------------- Fichas: el Departamento por dentro
 PORT = [l for l in prs.slide_layouts if l.name.strip() == "PORTADILLA"][0]
