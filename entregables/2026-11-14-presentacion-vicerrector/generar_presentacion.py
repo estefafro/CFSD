@@ -320,7 +320,7 @@ e1 = estacion(sl, 1, xs5[0], ML, "Necesidades", "Un sistema de salud que se digi
 e7 = estacion(sl, 7, xs5[4], ML, "Empleabilidad", "Egresados que el sistema necesita y sabe reconocer", oro=True, lado="izq")
 e2 = estacion(sl, 2, xs5[0], UN, "Lectura del mundo laboral", "Seguimiento de tendencias, normativa y demanda")
 e3 = estacion(sl, 3, xs5[1], UN, "Selección de oportunidades", "")
-for j, op in enumerate(("Actualización de la asignatura", "Electivo de salud con ingeniería", "Diplomado, en curso")):
+for j, op in enumerate(("Actualización de la asignatura", "Electivo de salud con ingeniería", "Diplomado, en desarrollo")):
     forma(sl, MSO_SHAPE.ROUNDED_RECTANGLE, xs5[1] - 0.93, UN + 0.42 + j * 0.3, 1.86, 0.26, op, ORO_PALIDO, NAVY, 9, borde=GOLD)
 e4 = estacion(sl, 4, xs5[2], UN, "Benchmarking", "Comparar con marcos y programas del mundo")
 e5 = estacion(sl, 5, xs5[3], UN, "Propuestas de implementación", "Asignaturas, electivos, programas y marco de desempeños")

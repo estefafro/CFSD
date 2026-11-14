@@ -9,6 +9,6 @@ Revisadas el 2026-11-14.
 - [HECHO] FACU0004 Salud Digital tiene 1.788 estudiantes en 31 secciones, 4 carreras y 4 sedes en el periodo 202620. Fuente: informe de docentes de la titular con datos de Blackboard al 2026-09-25, datos/facu0004/secciones_202620.csv (consultado 2026-11-14)
 - [HIPÓTESIS] El déficit de 3.500 profesionales es de 2019 y no está desagregado por perfil; puede haber una estimación más reciente de CENS o de la Red de Salud Digital de las Universidades del Estado. Lo confirmaría revisar sus informes.
 - [HECHO] La USS tiene datos de empleabilidad, pero no específicos de salud digital ni de competencias digitales. Fuente: titular del cargo (conversación 2026-11-14)
-- [HECHO] Oportunidades en proceso: actualización de la asignatura Salud Digital, un electivo de salud con ingeniería o tecnología, y un diplomado en curso. Fuente: titular del cargo (conversación 2026-11-14)
+- [HECHO] Oportunidades en proceso: actualización de la asignatura Salud Digital, un electivo de salud con ingeniería o tecnología, y un diplomado en desarrollo. Fuente: titular del cargo (conversación 2026-11-14)
 - [PROPUESTA] Sumar la mirada de salud digital al seguimiento de egresados: es la etapa que cierra el ciclo. Definir el indicador requiere respaldo del benchmark.
 - [PROPUESTA] No usar en pantalla la cifra global de 11,1 millones de la OMS: solo se encontró en una nota de prensa, no en el documento original.
