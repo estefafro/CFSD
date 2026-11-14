@@ -16,8 +16,12 @@ prs = Presentation(SRC)
 # quitar las láminas originales; se conservan patrón y diseños
 ids = prs.slides._sldIdLst
 for sld in list(ids):
+    titulo = prs.part.related_part(sld.rId).slide.shapes.title
+    if titulo is not None and titulo.text_frame.text.startswith("Organigrama"):
+        continue  # se conserva el organigrama matricial original
     prs.part.drop_rel(sld.rId)
     ids.remove(sld)
+assert len(ids) == 1, "no se encontró el organigrama original"
 LAYOUT = [l for l in prs.slide_layouts if l.name.strip() == "INTERIOR"][0]
 
 
@@ -115,7 +119,10 @@ def base(kicker, titulo):
     r = t.text_frame.paragraphs[0].runs[0]
     r.font.name, r.font.size, r.font.bold = "Cambria", Pt(28), True
     r.font.color.rgb = rgb(NAVY)
-    texto(sl, 0.6, 0.3, 11, 0.3, kicker, 11, BLUE, True)
+    t.text_frame.margin_left = t.text_frame.margin_right = 0
+    t.text_frame.vertical_anchor = MSO_ANCHOR.TOP
+    k = texto(sl, 0.6, 0.3, 11, 0.3, kicker, 11, BLUE, True, anchor=MSO_ANCHOR.TOP)
+    k.text_frame.paragraphs[0].runs[0]._r.get_or_add_rPr().set("spc", "180")  # mismo espaciado que la plantilla
     return sl
 
 
@@ -519,7 +526,7 @@ def organigrama(sl, foco):
 
 
 def ficha(foco, articulo, titulo, resumen, funciones, pie=None):
-    sl = base("EL DEPARTAMENTO POR DENTRO · " + articulo.upper(), titulo)
+    sl = base("RESPALDO · " + articulo.upper(), titulo)
     organigrama(sl, foco)
     panel(sl, 5.8, 1.55, 6.92, 1.7, "E4ECF7")
     texto(sl, 6.05, 1.66, 6.4, 0.28, "EL DECRETO DICE", 10, BLUE, True)
@@ -581,10 +588,12 @@ ficha("sedes", "Artículo 11", "Coordinaciones de Sede",
 
 # ---------------------------------------------------------------- Orden: ciclo, cifras, macro-micro, línea basal · articulación · fichas
 p_art = portadilla("Cómo se articula", "Tres maneras de mostrarlo")
-p_dep = portadilla("El Departamento por dentro", "Cada unidad: qué dice el decreto y qué hace")
+p_dep = portadilla("El Departamento por dentro", "Estructura y relaciones")
+p_res = portadilla("Respaldo", "Cada unidad: qué dice el decreto y qué hace")
 ids = prs.slides._sldIdLst
-el = list(ids)  # 0-2 swimlanes, 3 ciclo, 4 cifras, 5 macro-micro, 6 línea basal, 7-11 fichas, 12-13 portadillas
-orden = [el[3], el[4], el[5], el[6], el[12], el[0], el[1], el[2], el[13]] + el[7:12]
+el = list(ids)  # 0 organigrama original, 1-3 swimlanes, 4 ciclo, 5 cifras, 6 macro-micro, 7 línea basal, 8-12 fichas, 13-15 portadillas
+orden = [el[4], el[5], el[6], el[7], el[13], el[1], el[2], el[3], el[14], el[0], el[15]] + el[8:13]
+assert len(orden) == len(el)
 for e in el:
     ids.remove(e)
 for e in orden:
