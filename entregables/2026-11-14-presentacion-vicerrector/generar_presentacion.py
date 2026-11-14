@@ -319,7 +319,9 @@ xs5 = [3.5, 5.53, 7.56, 9.59, 11.62]
 e1 = estacion(sl, 1, xs5[0], ML, "Necesidades", "Un sistema de salud que se digitaliza y al que le falta personal", oro=True, lado="der")
 e7 = estacion(sl, 7, xs5[4], ML, "Empleabilidad", "Egresados que el sistema necesita y sabe reconocer", oro=True, lado="izq")
 e2 = estacion(sl, 2, xs5[0], UN, "Lectura del mundo laboral", "Seguimiento de tendencias, normativa y demanda")
-e3 = estacion(sl, 3, xs5[1], UN, "Selección de oportunidades", "Priorizar dónde la USS puede aportar")
+e3 = estacion(sl, 3, xs5[1], UN, "Selección de oportunidades", "")
+for j, op in enumerate(("Actualización de la asignatura", "Electivo de salud con ingeniería", "Diplomado, en curso")):
+    forma(sl, MSO_SHAPE.ROUNDED_RECTANGLE, xs5[1] - 0.93, UN + 0.42 + j * 0.3, 1.86, 0.26, op, ORO_PALIDO, NAVY, 9, borde=GOLD)
 e4 = estacion(sl, 4, xs5[2], UN, "Benchmarking", "Comparar con marcos y programas del mundo")
 e5 = estacion(sl, 5, xs5[3], UN, "Propuestas de implementación", "Asignaturas, electivos, programas y marco de desempeños")
 e6 = estacion(sl, 6, xs5[4], UN, "Competencias en los estudiantes", "Formación equivalente en las cuatro sedes", oscuro=True)
@@ -341,7 +343,7 @@ cifras = [("1", "170 M", "empleos nuevos en el mundo a 2030; cerca del 40% de la
           ("2", "3.500", "profesionales faltaban en Chile para la transformación digital de la salud", "CENS, estimación de 2019"),
           ("4", "35 → 0", "marcos de competencias en salud digital revisó la OMS; ningún marco nacional es de América Latina", "OMS, junio de 2026"),
           ("6", "1.788", "estudiantes cursan Salud Digital este semestre: 31 secciones, 4 carreras, 4 sedes", "Blackboard USS, 25 de septiembre de 2026"),
-          ("7", "Por medir", "empleabilidad de los egresados con formación en salud digital: aún no hay dato", "Propuesta: seguimiento de egresados")]
+          ("7", "Por medir", "la USS mide empleabilidad, pero no en salud digital ni en competencias digitales", "Oportunidad: sumar esa mirada al seguimiento de egresados")]
 w, h, g = 3.9, 2.25, 0.2
 for i, (et, num, lab, fu) in enumerate(cifras):
     x = 0.6 + (i % 3) * (w + g)
@@ -353,7 +355,7 @@ for i, (et, num, lab, fu) in enumerate(cifras):
     texto(sl, x + 0.25, y + 0.62, w - 0.5, 0.7, num, 34 if not ult else 28, GOLD if ult else NAVY, True, font="Cambria")
     texto(sl, x + 0.25, y + 1.32, w - 0.5, 0.56, lab, 11, NAVY, anchor=MSO_ANCHOR.TOP)
     texto(sl, x + 0.25, y + 1.9, w - 0.5, 0.25, fu, 8.5, GRIS, italic=True)
-nota(sl, "La etapa 7 es la que falta medir: sin ese dato el ciclo no se cierra.")
+nota(sl, "La etapa 7 es la oportunidad: medir la empleabilidad en salud digital cierra el ciclo.")
 
 prs.save(OUT)
 print("ok", len(prs.slides))
