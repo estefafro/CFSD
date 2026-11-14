@@ -172,7 +172,7 @@ LANES = [("Vicerrectorías", "Académica · VRID · VcM y Proyectos Instituciona
          ("Otras facultades", "ingeniería, derecho y otras", 0.64, False)]
 
 # ---------------------------------------------------------------- Opción 1
-sl = base("OPCIÓN 1 · BORRADOR", "El ciclo anual del Departamento, de punta a punta")
+sl = base("OPCIÓN 1", "El ciclo anual del Departamento, de punta a punta")
 cy = carriles(sl, LANES)
 xs, w = fases(sl, ["1 · Levantar", "2 · Planificar y decidir", "3 · Validar y ejecutar", "4 · Evaluar y rendir cuenta"])
 xa = [x + 0.68 for x in xs]
@@ -212,7 +212,7 @@ texto(sl, 11.76, DE - 0.22, 0.2, 0.2, "Sí", 8.5, NAVY, True)
 nota(sl, "Un solo recorrido que muestra en qué momento del año interviene cada actor y qué decide.")
 
 # ---------------------------------------------------------------- Opción 2
-sl = base("OPCIÓN 2 · BORRADOR", "Tres productos, un mismo camino por el Departamento")
+sl = base("OPCIÓN 2", "Tres productos, un mismo camino por el Departamento")
 L2 = [("Vicerrectorías", "cada una recibe lo suyo", 1.2, False), ("Facultad", "Decanato · Consejo de Facultad", 0.72, False),
       ("Departamento Nacional de Salud Digital", "Dirección · Áreas · Comité Consultivo", 1.32, True),
       ("Sedes", "Coordinaciones de Sede", 0.54, False), ("Carreras y escuelas", "", 0.52, False), ("Otras facultades", "", 0.52, False)]
@@ -245,7 +245,7 @@ for i, (t, c) in enumerate((("Docencia", NAVY), ("Investigación", BLUE), ("Vinc
 texto(sl, 7.3, 6.68, 5.4, 0.25, "Cada actor ve qué pide, por dónde pasa y qué recibe de vuelta.", 9.5, GRIS, italic=True, align=PP_ALIGN.RIGHT)
 
 # ---------------------------------------------------------------- Opción 3
-sl = base("OPCIÓN 3 · BORRADOR", "Qué aporta cada actor y qué recibe del Departamento")
+sl = base("OPCIÓN 3", "Qué aporta cada actor y qué recibe del Departamento")
 filas = [("Vicerrectoría Académica", "Política y normativa académica", "Oferta equivalente entre sedes e indicadores de docencia"),
          ("VRID", "Política de Investigación y fondos internos", "Líneas, proyectos y publicaciones con afiliación"),
          ("VcM y Proyectos Institucionales", "Unidades y lineamientos de vinculación", "Aporte especializado a sus iniciativas y alianzas"),
@@ -285,7 +285,7 @@ for i, (n, da, rec) in enumerate(filas):
 nota(sl, "No es un proceso paso a paso: es el mapa de intercambios. Sirve como lámina de entrada antes del flujo.")
 
 # ---------------------------------------------------------------- Ciclo de formación y empleabilidad
-sl = base("CICLO DE FORMACIÓN Y EMPLEABILIDAD · BORRADOR", "Del mundo laboral a la sala de clases, y de vuelta")
+sl = base("CICLO DE FORMACIÓN Y EMPLEABILIDAD", "Del mundo laboral a la sala de clases, y de vuelta")
 # dos bandas: mundo laboral arriba, universidad abajo
 for y, h, nombre, det, osc in ((1.62, 1.55, "Mundo laboral", "sistema de salud · empleadores", False), (3.3, 3.2, "Universidad", "Departamento Nacional de Salud Digital", True)):
     f = sl.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(2.4), Inches(y), Inches(10.32), Inches(h))
@@ -344,7 +344,7 @@ forma(sl, MSO_SHAPE.ROUNDED_RECTANGLE, 10.69, 5.62, 1.86, 0.62, "Coordinaciones 
 nota(sl, "El ciclo se repite: lo que el sistema de salud pide hoy define lo que se enseña mañana, y los egresados cambian lo que el sistema puede hacer.")
 
 # ---------------------------------------------------------------- Cifras del ciclo
-sl = base("CICLO DE FORMACIÓN Y EMPLEABILIDAD · BORRADOR", "Las cifras detrás del ciclo")
+sl = base("CICLO DE FORMACIÓN Y EMPLEABILIDAD", "Las cifras detrás del ciclo")
 cifras = [("1", "170 M", "empleos nuevos en el mundo a 2030; cerca del 40% de las habilidades clave va a cambiar", "Foro Económico Mundial, Future of Jobs 2025"),
           ("1", "0,6 a 2 M", "trabajadores de salud faltarán en las Américas a 2030 si no hay intervenciones", "OPS, 30 de abril de 2025"),
           ("2", "3.500", "profesionales faltaban en Chile para la transformación digital de la salud", "CENS, estimación de 2019"),
@@ -365,7 +365,7 @@ for i, (et, num, lab, fu) in enumerate(cifras):
 nota(sl, "La etapa 7 es la oportunidad: medir la empleabilidad en salud digital cierra el ciclo.")
 
 # ---------------------------------------------------------------- Mismo modelo, macro y micro
-sl = base("MACRO Y MICRO · BORRADOR", "El mismo modelo, de la sede a las Vicerrectorías")
+sl = base("MACRO Y MICRO", "El mismo modelo, de la sede a las Vicerrectorías")
 pasos = ["1 · Levantar y ordenar", "2 · Comparar", "3 · Crear y proponer", "4 · Calidad y trazabilidad", "5 · Medir y elevar"]
 niveles = [
     ("Dirección Nacional", "nivel macro", True,
@@ -416,7 +416,7 @@ forma(sl, MSO_SHAPE.ROUNDED_RECTANGLE, 0.6, 6.03, 12.12, 0.5, "Resultado: indica
 nota(sl, "Los cinco pasos son los mismos en cada nivel; cambia la escala. Las Áreas crecen porque levantan la necesidad antes de proponer la respuesta.", y=6.6)
 
 # ---------------------------------------------------------------- Línea de investigación basal
-sl = base("LÍNEA DE INVESTIGACIÓN BASAL · BORRADOR", "Competencias digitales en salud: una línea que queda instalada")
+sl = base("LÍNEA DE INVESTIGACIÓN BASAL", "Competencias digitales en salud: una línea que queda instalada")
 
 
 def panel(sl, x, y, w, h, fill):
