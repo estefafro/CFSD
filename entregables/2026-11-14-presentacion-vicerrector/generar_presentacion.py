@@ -467,5 +467,128 @@ for j, t in enumerate(("La gestiona el Área IVP", "Protocolo e instrumentos doc
 forma(sl, MSO_SHAPE.ROUNDED_RECTANGLE, 0.6, 6.03, 12.12, 0.5, "Productos: marco común de desempeños  ·  indicadores de competencias por sede  ·  publicaciones con afiliación al Departamento", NAVY, BLANCO, 11, True)
 nota(sl, "La docencia produce los datos, la investigación los convierte en evidencia y la evidencia vuelve a la docencia.", y=6.6)
 
+# ---------------------------------------------------------------- Fichas: el Departamento por dentro
+PORT = [l for l in prs.slide_layouts if l.name.strip() == "PORTADILLA"][0]
+
+
+def portadilla(titulo, sub):
+    sl = prs.slides.add_slide(PORT)
+    sl.shapes.title.text_frame.text = titulo
+    r = sl.shapes.title.text_frame.paragraphs[0].runs[0]
+    r.font.name, r.font.bold = "Cambria", True
+    r.font.color.rgb = rgb(NAVY)
+    t = sl.shapes.title
+    texto(sl, t.left / 914400, (t.top + t.height) / 914400 + 0.05, 8, 0.4, sub, 14, GRIS)
+    return sl
+
+
+def organigrama(sl, foco):
+    """Organigrama pequeño; `foco` pinta en color la unidad que se explica."""
+    def nodo(clave, cx, cy, w, h, t, size=10):
+        on = clave == foco
+        return forma(sl, MSO_SHAPE.ROUNDED_RECTANGLE, cx - w / 2, cy - h / 2, w, h, t, NAVY if on else "EEF1F5", BLANCO if on else GRIS, size, on,
+                     borde=GOLD if on else None)
+
+    def linea(x1, y1, x2, y2, punteada=False):
+        c = sl.shapes.add_connector(MSO_CONNECTOR.STRAIGHT, Inches(x1), Inches(y1), Inches(x2), Inches(y2))
+        c.line.color.rgb = rgb(LINEA)
+        c.line.width = Pt(1.25)
+        if punteada:
+            ln = c.line._get_or_add_ln()
+            etree.SubElement(ln, qn("a:prstDash"), {"val": "dash"})
+
+    linea(2.75, 2.0, 2.75, 2.42)
+    linea(2.75, 2.95, 2.75, 3.3)
+    linea(1.75, 3.3, 3.95, 3.3)
+    linea(1.75, 3.3, 1.75, 3.5)
+    linea(3.95, 3.3, 3.95, 3.5)
+    linea(2.75, 4.05, 2.75, 4.45)
+    linea(1.15, 4.45, 4.75, 4.45)
+    for x in (1.15, 2.35, 3.55, 4.75):
+        linea(x, 4.45, x, 4.62)
+    linea(3.7, 2.68, 4.1, 2.68, punteada=True)
+    nodo("dec", 2.75, 1.8, 1.9, 0.42, "Decanato FCCS")
+    nodo("dir", 2.75, 2.68, 1.9, 0.52, "Dirección Nacional", 11)
+    nodo("com", 4.75, 2.68, 1.3, 0.52, "Comité Consultivo", 9.5)
+    nodo("doc", 1.75, 3.78, 2.0, 0.56, "Área de Docencia", 11)
+    nodo("ivp", 3.95, 3.78, 2.0, 0.56, "Área IVP", 11)
+    for x, n in ((1.15, "Santiago"), (2.35, "Concepción"), (3.55, "Valdivia"), (4.75, "Puerto Montt")):
+        nodo("sedes", x, 4.88, 1.1, 0.5, n, 9)
+    texto(sl, 0.6, 5.2, 4.8, 0.25, "Coordinaciones de Sede", 9, NAVY if foco == "sedes" else GRIS, foco == "sedes", PP_ALIGN.CENTER)
+    forma(sl, MSO_SHAPE.ROUNDED_RECTANGLE, 0.6, 5.6, 4.8, 0.42, "Académicos adscritos y de otras unidades", "EEF1F5", GRIS, 9.5)
+
+
+def ficha(foco, articulo, titulo, resumen, funciones, pie=None):
+    sl = base("EL DEPARTAMENTO POR DENTRO · " + articulo.upper(), titulo)
+    organigrama(sl, foco)
+    panel(sl, 5.8, 1.55, 6.92, 1.7, "E4ECF7")
+    texto(sl, 6.05, 1.66, 6.4, 0.28, "EL DECRETO DICE", 10, BLUE, True)
+    texto(sl, 6.05, 1.96, 6.4, 1.2, resumen, 12.5, NAVY, font="Cambria", anchor=MSO_ANCHOR.TOP)
+    panel(sl, 5.8, 3.4, 6.92, 2.62, "F4F7FB")
+    texto(sl, 6.05, 3.51, 6.4, 0.28, "FUNCIONES", 10, BLUE, True)
+    for j, (a, b) in enumerate(funciones):
+        y = 3.86 + j * (2.05 / len(funciones))
+        forma(sl, MSO_SHAPE.OVAL, 6.05, y + 0.06, 0.16, 0.16, "", GOLD)
+        tb = texto(sl, 6.32, y - 0.04, 6.2, 0.4, "", 11.5, NAVY)
+        p = tb.text_frame.paragraphs[0]
+        p.runs[0].text = a + (". " if b else "")
+        p.runs[0].font.bold = True
+        if b:
+            r2 = p.add_run()
+            r2.text = b
+            r2.font.size, r2.font.name = Pt(11.5), "Calibri"
+            r2.font.color.rgb = rgb(NAVY)
+    if pie:
+        nota(sl, pie, y=6.15)
+    return sl
+
+
+ficha("dir", "Artículo 8", "Dirección Nacional",
+      "Un Director o Directora Nacional que, bajo la autoridad de la Decana, conduce el Departamento y ejecuta los acuerdos de la Facultad en las materias de su competencia.",
+      [("Conduce", "Planifica y coordina todas las funciones y sedes; elabora el Plan de Desarrollo."),
+       ("Articula personas", "Propone Jefaturas y Coordinaciones y acuerda horas con las unidades de origen."),
+       ("Programa la docencia", "Planifica las asignaturas adscritas y propone programas."),
+       ("Gestiona recursos y alianzas", "Identifica requerimientos y propone convenios."),
+       ("Rinde cuenta", "Preside el Comité Consultivo y da cuenta anual a la Decana y al Consejo de Facultad.")])
+ficha("com", "Artículo 9", "Comité Consultivo",
+      "Asesora a la Dirección Nacional en la planificación y el seguimiento. Lo integran la Dirección, las Jefaturas de Área y los Coordinadores de Sede, y sesiona en forma ordinaria o ampliada.",
+      [("Ordinario", "Seguimiento del quehacer del Departamento."),
+       ("Ampliado con Escuelas", "Programación, equivalencia y perfiles de egreso."),
+       ("Ampliado con Facultades", "Proyectos, programas y trabajo entre facultades."),
+       ("Actas", "Se remiten a la Secretaría General.")])
+ficha("doc", "Artículo 10", "Área de Docencia",
+      "Seguimiento, análisis comparado y formulación de propuestas para robustecer, mejorar y actualizar la formación en salud digital de pregrado, postgrado y educación continua.",
+      [("Benchmarking", "Compara la oferta con referentes nacionales e internacionales."),
+       ("Creación", "Diseña y actualiza asignaturas y programas."),
+       ("Calidad y trazabilidad", "Da seguimiento a la oferta formativa en todas las sedes."),
+       ("Competencias y resultados de aprendizaje", "Cuida que tributen a los perfiles de egreso."),
+       ("Eleva", "Consolida la información de las sedes y la entrega a la Dirección Nacional.")],
+      pie="Trabaja en tres frentes: pregrado, postgrado y educación continua.")
+ficha("ivp", "Artículo 10", "Área IVP: investigación, vinculación con el medio y proyectos",
+      "Gestiona la investigación, la vinculación con el medio y el desarrollo de proyectos del Departamento, en coordinación con las Vicerrectorías y unidades institucionales competentes.",
+      [("Líneas de investigación", "Las propone y organiza, con la línea basal de competencias como base."),
+       ("Fondos y proyectos", "Promueve postulaciones con financiamiento interno y externo."),
+       ("Vinculación con el medio", "Trabaja en conjunto con las unidades de la Universidad, la Facultad y las carreras."),
+       ("Estudiantes", "Los integra a la investigación, en pregrado y postgrado."),
+       ("Afiliación y difusión", "Hace visible la producción del Departamento.")])
+ficha("sedes", "Artículo 11", "Coordinaciones de Sede",
+      "En cada sede, un Coordinador o Coordinadora que depende de la Dirección Nacional y sigue los lineamientos técnicos de las Áreas. Representa al Departamento y vela por la equivalencia de la formación entre sedes.",
+      [("Representa", "Es la cara del Departamento en la sede."),
+       ("Mide", "Seguimiento, monitoreo e indicadores locales."),
+       ("Cuida la equivalencia", "Que la formación sea la misma en las cuatro sedes."),
+       ("Levanta", "Los requerimientos de las carreras y los académicos que pueden sumarse."),
+       ("Informa", "A las Áreas y a la Dirección, e integra el Comité Consultivo.")])
+
+# ---------------------------------------------------------------- Orden: ciclo, cifras, macro-micro, línea basal · articulación · fichas
+p_art = portadilla("Cómo se articula", "Tres maneras de mostrarlo")
+p_dep = portadilla("El Departamento por dentro", "Cada unidad: qué dice el decreto y qué hace")
+ids = prs.slides._sldIdLst
+el = list(ids)  # 0-2 swimlanes, 3 ciclo, 4 cifras, 5 macro-micro, 6 línea basal, 7-11 fichas, 12-13 portadillas
+orden = [el[3], el[4], el[5], el[6], el[12], el[0], el[1], el[2], el[13]] + el[7:12]
+for e in el:
+    ids.remove(e)
+for e in orden:
+    ids.append(e)
+
 prs.save(OUT)
 print("ok", len(prs.slides))
