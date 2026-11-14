@@ -18,7 +18,12 @@
 - Por qué el Departamento importa ahora: el próximo año no quiere seguir absorbiendo sola los requerimientos que le llegan (electivos, clases); quiere un equipo. (Misma fuente.)
 - Quiere que su modelo de competencias sea la línea de investigación basal del Departamento, basada en la revisión de la OMS de junio de 2026, y que siga funcionando aunque ella no esté. (Misma fuente.)
 
+- Dotación, responsables de Docencia y de las Coordinaciones de Sede, horas de investigación y plazo de instalación ya fueron conversados en el Consejo de Facultad. El Vicerrector Académico verá el borrador del decreto y aportará su experiencia institucional; después se ajusta y se presenta. (Fuente: titular del cargo, conversación 2026-11-14.)
+- Su contrato contempla horas de dedicación para dirección, investigación y academia. (Misma fuente.) Falta el detalle de cuántas son para cada una.
+
 ## Proyecto a 10 años
+
+- Declaró en el Consejo de Facultad que quiere hacer un doctorado y que el modelo de competencias le interesa como línea. Le acomoda decidir el programa antes de marzo de 2027. (Fuente: titular del cargo, conversación 2026-11-14.)
 
 - Doctorado (programa, estado, hitos):
 - Línea de publicación:
