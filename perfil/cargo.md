@@ -29,6 +29,9 @@
 - Línea de publicación:
 - Posicionamiento regional que se busca:
 
+- Su modelo de competencias no compite con el de CENS: lo complementa. CENS será citado y se estudiarán otros modelos. (Fuente: titular del cargo, conversación 2026-11-14.)
+- En la línea de investigación no usará datos sensibles. (Misma fuente.)
+
 ## Intereses declarados
 
 - Ruta Panamericana de la Salud Digital y competencias en salud digital de la OMS, como ejes de su discurso público. (Fuente: titular del cargo, conversación 2026-11-11.)
