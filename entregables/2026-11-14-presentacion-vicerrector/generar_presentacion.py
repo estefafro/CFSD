@@ -408,5 +408,64 @@ tb.rotation = -90
 forma(sl, MSO_SHAPE.ROUNDED_RECTANGLE, 0.6, 6.03, 12.12, 0.5, "Resultado: indicadores de competencias digitales en salud, con detalle por sede, para cada Vicerrectoría", NAVY, BLANCO, 11, True)
 nota(sl, "Los cinco pasos son los mismos en cada nivel; cambia la escala. Las Áreas crecen porque levantan la necesidad antes de proponer la respuesta.", y=6.6)
 
+# ---------------------------------------------------------------- Línea de investigación basal
+sl = base("LÍNEA DE INVESTIGACIÓN BASAL · BORRADOR", "Competencias digitales en salud: una línea que queda instalada")
+
+
+def panel(sl, x, y, w, h, fill):
+    p = sl.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(x), Inches(y), Inches(w), Inches(h))
+    p.shadow.inherit = False
+    p.fill.solid()
+    p.fill.fore_color.rgb = rgb(fill)
+    p.line.fill.background()
+    p.adjustments[0] = 0.05
+    return p
+
+
+# 1. punto de partida
+panel(sl, 0.6, 1.55, 3.0, 4.35, NAVY)
+texto(sl, 0.8, 1.68, 2.6, 0.3, "PUNTO DE PARTIDA", 10, "D6E2F2", True)
+texto(sl, 0.8, 1.98, 2.6, 0.62, "Revisión de la OMS, junio de 2026", 15, BLANCO, True, font="Cambria", anchor=MSO_ANCHOR.TOP)
+for j, (n, t) in enumerate((("35", "marcos de competencias en salud digital revisados"), ("10", "grupos de competencias identificados"))):
+    texto(sl, 0.8, 2.72 + j * 0.72, 0.85, 0.6, n, 28, "E3C98A", True, font="Cambria")
+    texto(sl, 1.62, 2.72 + j * 0.72, 1.85, 0.6, t, 10, BLANCO)
+texto(sl, 0.8, 4.22, 2.6, 0.26, "LO QUE DEJA ABIERTO", 9.5, "D6E2F2", True)
+for j, t in enumerate(("Ningún marco nacional de América Latina", "Ningún grupo dedicado a inteligencia artificial", "Solo literatura en inglés, 2012 a 2022")):
+    texto(sl, 0.8, 4.5 + j * 0.42, 2.6, 0.4, "· " + t, 10, BLANCO)
+
+# 2. la línea, como ciclo
+panel(sl, 3.78, 1.55, 5.5, 4.35, "E4ECF7")
+texto(sl, 3.98, 1.68, 5.1, 0.3, "LA LÍNEA BASAL DEL DEPARTAMENTO", 10, BLUE, True)
+texto(sl, 3.98, 1.98, 5.1, 0.4, "Un modelo de competencias, medido cada semestre", 15, NAVY, True, font="Cambria")
+pasos4 = [("Adaptar", "el modelo al contexto chileno y a las carreras"), ("Medir", "en los estudiantes, cada semestre"),
+          ("Analizar", "por sede, carrera y cohorte"), ("Ajustar", "la formación con evidencia")]
+cx4 = [4.56, 5.87, 7.18, 8.49]
+cajas4 = []
+for j, (t, d) in enumerate(pasos4):
+    b = forma(sl, MSO_SHAPE.ROUNDED_RECTANGLE, cx4[j] - 0.58, 2.85, 1.16, 0.55, t, NAVY, BLANCO, 12, True)
+    forma(sl, MSO_SHAPE.OVAL, cx4[j] - 0.7, 2.72, 0.3, 0.3, str(j + 1), GOLD, BLANCO, 9, True)
+    texto(sl, cx4[j] - 0.6, 3.48, 1.2, 0.75, d, 9.5, NAVY, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.TOP)
+    cajas4.append(b)
+for j in range(3):
+    flecha(sl, cajas4[j], cajas4[j + 1], "der", "izq", recta=True, grosor=2)
+c = sl.shapes.add_connector(MSO_CONNECTOR.STRAIGHT, Inches(8.49), Inches(2.6), Inches(4.75), Inches(2.6))
+c.line.color.rgb = rgb(GOLD)
+c.line.width = Pt(2)
+ln = c.line._get_or_add_ln()
+ln.append(etree.SubElement(ln, qn("a:tailEnd"), {"type": "triangle", "w": "med", "len": "med"}))
+texto(sl, 5.3, 2.36, 2.5, 0.22, "y se vuelve a medir", 9, GOLD, True, PP_ALIGN.CENTER, italic=True)
+forma(sl, MSO_SHAPE.ROUNDED_RECTANGLE, 3.98, 4.45, 5.1, 0.62, "Laboratorio: la asignatura Salud Digital, con 1.788 estudiantes de 4 carreras en 4 sedes", BLANCO, NAVY, 10.5, True, borde=NAVY)
+texto(sl, 3.98, 5.18, 5.1, 0.6, "Responde al artículo 3: un marco común de desempeños «sustentado en la investigación del Departamento y en los estándares internacionales».", 9.5, GRIS, italic=True, anchor=MSO_ANCHOR.TOP)
+
+# 3. por qué queda andando
+panel(sl, 9.46, 1.55, 3.26, 4.35, ORO_PALIDO)
+texto(sl, 9.66, 1.68, 2.9, 0.3, "QUEDA ANDANDO PORQUE", 10, GOLD, True)
+texto(sl, 9.66, 1.98, 2.9, 0.62, "Es del Departamento, no de una persona", 15, NAVY, True, font="Cambria", anchor=MSO_ANCHOR.TOP)
+for j, t in enumerate(("La gestiona el Área IVP", "Protocolo e instrumentos documentados", "Datos en un repositorio del Departamento", "Las sedes levantan la información", "Estudiantes de pregrado y postgrado en tesis")):
+    forma(sl, MSO_SHAPE.ROUNDED_RECTANGLE, 9.66, 2.78 + j * 0.6, 2.86, 0.5, t, BLANCO, NAVY, 10, borde=GOLD)
+
+forma(sl, MSO_SHAPE.ROUNDED_RECTANGLE, 0.6, 6.03, 12.12, 0.5, "Productos: marco común de desempeños  ·  indicadores de competencias por sede  ·  publicaciones con afiliación al Departamento", NAVY, BLANCO, 11, True)
+nota(sl, "La docencia produce los datos, la investigación los convierte en evidencia y la evidencia vuelve a la docencia.", y=6.6)
+
 prs.save(OUT)
 print("ok", len(prs.slides))
