@@ -357,5 +357,56 @@ for i, (et, num, lab, fu) in enumerate(cifras):
     texto(sl, x + 0.25, y + 1.9, w - 0.5, 0.25, fu, 8.5, GRIS, italic=True)
 nota(sl, "La etapa 7 es la oportunidad: medir la empleabilidad en salud digital cierra el ciclo.")
 
+# ---------------------------------------------------------------- Mismo modelo, macro y micro
+sl = base("MACRO Y MICRO · BORRADOR", "El mismo modelo, de la sede a las Vicerrectorías")
+pasos = ["1 · Levantar y ordenar", "2 · Comparar", "3 · Crear y proponer", "4 · Calidad y trazabilidad", "5 · Medir y elevar"]
+niveles = [
+    ("Dirección Nacional", "nivel macro", True,
+     ["Integra lo que elevan las Áreas", "Lee el mundo laboral y el sistema de salud", "Levanta la necesidad y propone cómo responder", "Plan de Desarrollo y cuenta anual",
+      "Entrega a cada Vicerrectoría lo suyo: Académica, VRID, VcM y Proyectos Institucionales"]),
+    ("Área de Docencia", "pregrado · postgrado · educación continua", False,
+     ["Consolida la información de las sedes", "Benchmarking nacional e internacional", "Creación y actualización de asignaturas y programas", "Calidad, trazabilidad, competencias y resultados de aprendizaje",
+      "Eleva a la Dirección Nacional"]),
+    ("Área IVP", "investigación · vinculación · proyectos", False,
+     ["Capacidades, líneas y socios", "Fondos, convocatorias y referentes", "Formula proyectos e iniciativas", "Seguimiento de proyectos; centro de costos (en evaluación)",
+      "Eleva a la Dirección Nacional"]),
+    ("Coordinación de Sede", "nivel micro", False,
+     ["Requerimientos de las carreras e información local ordenada", "Equivalencia frente a las otras sedes", "Propone ajustes locales", "Seguimiento y monitoreo en la sede",
+      "Eleva a las Áreas y a la Dirección"]),
+]
+x0, x1, wl = 0.6, 12.2, 1.95
+wc = (x1 - x0 - wl - 0.06) / 5
+for j, p in enumerate(pasos):
+    forma(sl, MSO_SHAPE.RECTANGLE, x0 + wl + 0.06 + j * wc + 0.03, 1.5, wc - 0.06, 0.32, p, NAVY, BLANCO, 10, True)
+hr = 1.02
+for i, (n, det, osc, celdas) in enumerate(niveles):
+    y = 1.9 + i * hr
+    et = forma(sl, MSO_SHAPE.RECTANGLE, x0, y, wl, hr - 0.07, "", NAVY if osc else PALE)
+    tf = et.text_frame
+    tf.paragraphs[0].runs[0].text = n
+    tf.paragraphs[0].runs[0].font.bold = True
+    tf.paragraphs[0].runs[0].font.size = Pt(12)
+    tf.paragraphs[0].runs[0].font.color.rgb = rgb(BLANCO if osc else NAVY)
+    p = tf.add_paragraph()
+    p.alignment = PP_ALIGN.CENTER
+    r = p.add_run()
+    r.text = det
+    r.font.size, r.font.name = Pt(8.5), "Calibri"
+    r.font.color.rgb = rgb("D6E2F2" if osc else GRIS)
+    for j, c in enumerate(celdas):
+        ult = j == 4
+        forma(sl, MSO_SHAPE.ROUNDED_RECTANGLE, x0 + wl + 0.06 + j * wc + 0.03, y, wc - 0.06, hr - 0.07, c,
+              (ORO_PALIDO if ult else ("E4ECF7" if osc else "F4F7FB")), NAVY, 9.5, bold=(osc and ult)).adjustments[0] = 0.1
+# flecha ascendente
+fl = sl.shapes.add_shape(MSO_SHAPE.UP_ARROW, Inches(12.3), Inches(1.9), Inches(0.42), Inches(4 * hr - 0.07))
+fl.shadow.inherit = False
+fl.fill.solid()
+fl.fill.fore_color.rgb = rgb(GOLD)
+fl.line.fill.background()
+tb = texto(sl, 10.72, 3.72, 3.6, 0.3, "la información sube ordenada", 9, BLANCO, True, PP_ALIGN.CENTER)
+tb.rotation = -90
+forma(sl, MSO_SHAPE.ROUNDED_RECTANGLE, 0.6, 6.03, 12.12, 0.5, "Resultado: indicadores de competencias digitales en salud, con detalle por sede, para cada Vicerrectoría", NAVY, BLANCO, 11, True)
+nota(sl, "Los cinco pasos son los mismos en cada nivel; cambia la escala. Las Áreas crecen porque levantan la necesidad antes de proponer la respuesta.", y=6.6)
+
 prs.save(OUT)
 print("ok", len(prs.slides))
