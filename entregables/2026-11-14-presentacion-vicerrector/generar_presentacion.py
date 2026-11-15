@@ -366,7 +366,7 @@ flecha(sl, e6, e7, "arriba", "abajo", recta=True, grosor=2)
 flecha(sl, e7, e1, "izq", "der", color=GOLD, recta=True, grosor=2)
 texto(sl, 5.4, ML - 0.32, 4.4, 0.24, "el mundo laboral cambia y vuelve a pedir", 9.5, GOLD, True, PP_ALIGN.CENTER, italic=True)
 # franja: quién lo hace en el Departamento
-forma(sl, MSO_SHAPE.ROUNDED_RECTANGLE, 2.57, 5.62, 7.95, 0.62, "Área de Docencia: seguimiento, análisis comparado y propuestas (artículo 10)  ·  Comité Consultivo y Decana: priorizan y deciden", NAVY, BLANCO, 10)
+forma(sl, MSO_SHAPE.ROUNDED_RECTANGLE, 2.57, 5.62, 7.95, 0.62, "Área de Docencia: seguimiento, análisis comparado y propuestas (artículo 10)  ·  Comité Consultivo: asesora  ·  Decana: prioriza y decide", NAVY, BLANCO, 10)
 forma(sl, MSO_SHAPE.ROUNDED_RECTANGLE, 10.69, 5.62, 1.86, 0.62, "Coordinaciones de Sede: equivalencia", NAVY, BLANCO, 9.5)
 nota(sl, "El ciclo se repite: lo que el sistema de salud pide hoy define lo que se enseña mañana, y los egresados cambian lo que el sistema puede hacer.")
 
