@@ -66,3 +66,21 @@ Criterios, dados por la titular el 2026-11-14: en los vistos, solo documentos ve
 
 - [HECHO] Las funciones del cargo incluyen gestionar las actividades del Departamento conforme al Modelo de Gestión de Calidad de la Facultad, en coordinación con la Dirección de Aseguramiento de la Calidad de la Facultad. Fuente: "Funciones del director(a) del Departamento de Salud Digital", documento entregado por la titular (leído 2026-11-17)
 - [PROPUESTA] La frase se aplicó a las dos Áreas y no solo a Docencia, porque las funciones del cargo piden calidad en los procesos académicos, de investigación y de vinculación con el medio. Están pendientes las observaciones de la Decana, que se incorporarán a esta misma versión.
+
+## De v0.5 a v0.6 (2026-11-17): nombres finales de la Decana
+
+- [HECHO] La presentación al Vicerrector Académico del 2026-11-16 usa los nombres "Dirección de Docencia", "Dirección de Proyectos" y "Dirección de Sede", y mantiene el Comité Consultivo en forma ordinaria o ampliada. Fuente: 2026_11_16_Departamento_Salud_Digital_Presentacion_Vicerrector_Academico_con_objetivos.pdf, entregado por la titular (leído 2026-11-17)
+- [HECHO] Esos nombres son los definidos por la Decana, y las funciones quedan por ahora igual. Fuente: titular del cargo (conversación 2026-11-17)
+
+| Artículo | v0.5 | v0.6 |
+|---|---|---|
+| 7.º | Área de Docencia, Área de Proyectos, Coordinaciones de Sede; "las Áreas y las Coordinaciones de Sede son instancias internas" | Dirección de Docencia, Dirección de Proyectos, Direcciones de Sede; "las Direcciones de área y las Direcciones de Sede son instancias internas" |
+| 8.º | Subroga "la Jefatura de Área que designe" | Subroga "el Director o Directora de área que designe" |
+| 9.º | Integran el Comité "las Jefaturas de Área y los Coordinadores de Sede" | "los Directores o Directoras de área y los Directores o Directoras de Sede" |
+| 10.º | "El Área de…", "Ambas Áreas", "Cada Área estará a cargo de una Jefatura" | "La Dirección de…", "Ambas Direcciones", "Cada Dirección de área estará a cargo de un Director o Directora" |
+| 11.º | "Coordinación de Sede… a cargo de un Coordinador o Coordinadora… lineamientos técnicos de las Áreas" | "Dirección de Sede… a cargo de un Director o Directora… lineamientos técnicos de las Direcciones de área" |
+| 12.º | "Las Jefaturas de Área y los Coordinadores de Sede" | "Los Directores o Directoras de área y los Directores o Directoras de Sede" |
+| Transitorios 2.º y 3.º | Jefaturas de Área; Áreas y Coordinaciones de Sede | Directores o Directoras de área; Direcciones de área y Direcciones de Sede |
+
+- [HIPÓTESIS] Llamar "Direcciones" y "Directores" a estas instancias puede chocar con la frase del artículo 7.º que dice que no constituyen "autoridades unipersonales" según los artículos 1 y 9 del Reglamento de Unidades Académicas. Lo confirmaría leer esos artículos o consultarlo a Secretaría General; en esta sesión no se abrió el Reglamento.
+- [PROPUESTA] Para el nombre genérico se usó "Direcciones de área", una de las tres formas que aparecen en la presentación ("por área", "de áreas", "de área"). Conviene dejar una sola en ambos documentos.

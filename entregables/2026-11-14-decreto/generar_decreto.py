@@ -85,25 +85,25 @@ OBJETIVOS = [
 ]
 
 ORGANIZACION = [
-    ("7.º", "El Departamento Nacional de Salud Digital formará parte y dependerá administrativa y académicamente de la Facultad de Ciencias para el Cuidado de la Salud. Constituye una unidad académica única de carácter nacional, integrada por la Dirección Nacional, el Área de Docencia, el Área de Proyectos, las Coordinaciones de Sede y sus académicos, y contará con un Comité Consultivo. Las Áreas y las Coordinaciones de Sede son instancias internas de gestión del Departamento y no constituyen unidades académicas ni autoridades unipersonales en los términos de los artículos 1 y 9 del Reglamento de Unidades Académicas.", []),
-    ("8.º", "El Departamento estará a cargo de un Director o Directora Nacional, designado conforme al Reglamento de Unidades Académicas, quien, bajo la autoridad del Decano o Decana, será el directivo académico responsable de conducir el Departamento y de ejecutar los acuerdos de la Facultad en las materias de su competencia. En caso de ausencia o impedimento, será subrogado por la Jefatura de Área que designe el Decano o Decana, a propuesta de la Dirección Nacional.", []),
-    ("9.º", "El Departamento contará con un Comité Consultivo, que asesorará a la Dirección Nacional en la planificación y el seguimiento de su quehacer. Estará integrado por el Director o Directora Nacional, quien lo presidirá, las Jefaturas de Área y los Coordinadores de Sede. El Comité sesionará periódicamente, en forma ordinaria o ampliada según las materias a tratar; a las sesiones ampliadas se convocará a representantes de las Escuelas y de las Facultades con las que se articula el Departamento, en especial de las disciplinas de ingeniería y derecho. Sus actas se remitirán a la Secretaría General conforme al artículo 27 del Reglamento de Unidades Académicas.", []),
-    ("10.º", "El Área de Docencia, que comprende el pregrado, el postgrado y la educación continua, tendrá por objeto el seguimiento, el análisis comparado y la formulación de propuestas para robustecer, mejorar y actualizar la formación en salud digital. El Área de Proyectos, que comprende la línea basal, la investigación y la vinculación con el medio, tendrá a su cargo la gestión de las líneas y los proyectos del Departamento en esas materias, en coordinación con las Vicerrectorías y unidades institucionales competentes. Ambas Áreas resguardarán la calidad y la trazabilidad de los procesos a su cargo, conforme a los mecanismos de aseguramiento de la calidad de la Facultad y de la Universidad. Cada Área estará a cargo de una Jefatura.", []),
-    ("11.º", "En cada sede de la Universidad existirá una Coordinación de Sede del Departamento, a cargo de un Coordinador o Coordinadora que dependerá de la Dirección Nacional y seguirá los lineamientos técnicos de las Áreas en sus respectivas materias. Le corresponderá representar al Departamento en la sede y realizar el seguimiento, el monitoreo y el levantamiento de indicadores locales de su quehacer, velando por la equivalencia de la formación entre sedes.", []),
-    ("12.º", "Las Jefaturas de Área y los Coordinadores de Sede serán designados por el Decano o Decana, a propuesta de la Dirección Nacional.", []),
+    ("7.º", "El Departamento Nacional de Salud Digital formará parte y dependerá administrativa y académicamente de la Facultad de Ciencias para el Cuidado de la Salud. Constituye una unidad académica única de carácter nacional, integrada por la Dirección Nacional, la Dirección de Docencia, la Dirección de Proyectos, las Direcciones de Sede y sus académicos, y contará con un Comité Consultivo. Las Direcciones de área y las Direcciones de Sede son instancias internas de gestión del Departamento y no constituyen unidades académicas ni autoridades unipersonales en los términos de los artículos 1 y 9 del Reglamento de Unidades Académicas.", []),
+    ("8.º", "El Departamento estará a cargo de un Director o Directora Nacional, designado conforme al Reglamento de Unidades Académicas, quien, bajo la autoridad del Decano o Decana, será el directivo académico responsable de conducir el Departamento y de ejecutar los acuerdos de la Facultad en las materias de su competencia. En caso de ausencia o impedimento, será subrogado por el Director o Directora de área que designe el Decano o Decana, a propuesta de la Dirección Nacional.", []),
+    ("9.º", "El Departamento contará con un Comité Consultivo, que asesorará a la Dirección Nacional en la planificación y el seguimiento de su quehacer. Estará integrado por el Director o Directora Nacional, quien lo presidirá, los Directores o Directoras de área y los Directores o Directoras de Sede. El Comité sesionará periódicamente, en forma ordinaria o ampliada según las materias a tratar; a las sesiones ampliadas se convocará a representantes de las Escuelas y de las Facultades con las que se articula el Departamento, en especial de las disciplinas de ingeniería y derecho. Sus actas se remitirán a la Secretaría General conforme al artículo 27 del Reglamento de Unidades Académicas.", []),
+    ("10.º", "La Dirección de Docencia, que comprende el pregrado, el postgrado y la educación continua, tendrá por objeto el seguimiento, el análisis comparado y la formulación de propuestas para robustecer, mejorar y actualizar la formación en salud digital. La Dirección de Proyectos, que comprende la línea basal, la investigación y la vinculación con el medio, tendrá a su cargo la gestión de las líneas y los proyectos del Departamento en esas materias, en coordinación con las Vicerrectorías y unidades institucionales competentes. Ambas Direcciones resguardarán la calidad y la trazabilidad de los procesos a su cargo, conforme a los mecanismos de aseguramiento de la calidad de la Facultad y de la Universidad. Cada Dirección de área estará a cargo de un Director o Directora.", []),
+    ("11.º", "En cada sede de la Universidad existirá una Dirección de Sede del Departamento, a cargo de un Director o Directora que dependerá de la Dirección Nacional y seguirá los lineamientos técnicos de las Direcciones de área en sus respectivas materias. Le corresponderá representar al Departamento en la sede y realizar el seguimiento, el monitoreo y el levantamiento de indicadores locales de su quehacer, velando por la equivalencia de la formación entre sedes.", []),
+    ("12.º", "Los Directores o Directoras de área y los Directores o Directoras de Sede serán designados por el Decano o Decana, a propuesta de la Dirección Nacional.", []),
     ("13.º", "Integrarán el Departamento los académicos adscritos a él y los académicos de otras unidades académicas de la Universidad que participen en sus actividades conforme a lo acordado con su unidad de origen.", []),
 ]
 
 TRANSITORIOS = [
     ("primero", "La Directora del Departamento en funciones a la fecha del presente decreto continuará en el cargo, y el período establecido en el artículo 14 del Reglamento de Unidades Académicas se computará a contar de la fecha del presente decreto."),
-    ("segundo", "Mientras no se designen las Jefaturas de Área, sus funciones serán ejercidas por la Dirección Nacional."),
-    ("tercero", "Las Áreas y las Coordinaciones de Sede se instalarán gradualmente, conforme al plan de implementación que la Dirección Nacional presentará al Decano o Decana."),
+    ("segundo", "Mientras no se designen los Directores o Directoras de área, sus funciones serán ejercidas por la Dirección Nacional."),
+    ("tercero", "Las Direcciones de área y las Direcciones de Sede se instalarán gradualmente, conforme al plan de implementación que la Dirección Nacional presentará al Decano o Decana."),
 ]
 
 
 def decreto(ruta):
     d = nuevo("Cambria", 11)
-    p(d, "Propuesta de decreto · versión 0.5 · documento de trabajo", WD_ALIGN_PARAGRAPH.RIGHT, color=GRIS, tam=9)
+    p(d, "Propuesta de decreto · versión 0.6 · documento de trabajo", WD_ALIGN_PARAGRAPH.RIGHT, color=GRIS, tam=9)
     titulo(d, "DECRETO DE RECTORÍA N.º [●]", 13, centro=True, antes=6)
     p(d, "Santiago, [●]", WD_ALIGN_PARAGRAPH.RIGHT)
     p(d, [("MATERIA: ", True), ("Oficializa la creación del Departamento Nacional de Salud Digital, adscrito a la Facultad de Ciencias para el Cuidado de la Salud de la Universidad San Sebastián.", False)])
@@ -168,15 +168,15 @@ def resumen(ruta):
     h("Cómo se organiza (artículos 7 a 13)")
     b("Dependencia. ", "Forma parte de la Facultad de Ciencias para el Cuidado de la Salud y actúa bajo la autoridad de la Decana.")
     b("Dirección Nacional. ", "Conduce el Departamento, con la asesoría de un Comité Consultivo que sesiona en forma ordinaria o ampliada con Escuelas y Facultades.")
-    b("Área de Docencia. ", "Pregrado, postgrado y educación continua: seguimiento, análisis comparado y propuestas.")
-    b("Área de Proyectos. ", "Línea basal, investigación y vinculación con el medio, en coordinación con las Vicerrectorías competentes.")
-    b("Coordinaciones de Sede. ", "Santiago, Concepción, Valdivia y Puerto Montt: seguimiento, indicadores locales y equivalencia entre sedes. Dependen de la Dirección Nacional y siguen los lineamientos técnicos de las Áreas (estructura matricial).")
+    b("Dirección de Docencia. ", "Pregrado, postgrado y educación continua: seguimiento, análisis comparado y propuestas.")
+    b("Dirección de Proyectos. ", "Línea basal, investigación y vinculación con el medio, en coordinación con las Vicerrectorías competentes.")
+    b("Direcciones de Sede. ", "Santiago, Concepción, Valdivia y Puerto Montt: seguimiento, indicadores locales y equivalencia entre sedes. Dependen de la Dirección Nacional y siguen los lineamientos técnicos de las Direcciones de área (estructura matricial).")
 
     h("Lo que el decreto resguarda")
-    b("No crea nuevas unidades académicas ni autoridades unipersonales: ", "las Áreas y las Coordinaciones son instancias internas de gestión (art. 7).")
+    b("No crea nuevas unidades académicas ni autoridades unipersonales: ", "las Direcciones de área y de Sede son instancias internas de gestión (art. 7).")
     b("No interviene los planes de estudio: ", "propone, y las carreras incorporan conforme a sus procesos (art. 3).")
     b("No duplica funciones: ", "trabaja con las unidades de vinculación con el medio y con las Vicerrectorías, sin perjuicio de sus atribuciones (arts. 6 y 10).")
-    b("Instalación gradual: ", "las Áreas y las Coordinaciones se instalan según un plan de implementación que la Dirección Nacional presenta a la Decana (transitorio tercero).")
+    b("Instalación gradual: ", "las Direcciones de área y de Sede se instalan según un plan de implementación que la Dirección Nacional presenta a la Decana (transitorio tercero).")
 
     h("Qué aporta a la Universidad")
     p(d, "Una formación en salud digital equivalente en todas las sedes; una lectura ordenada de lo que requiere el mundo laboral, con propuestas de respuesta para pregrado, postgrado y educación continua; una línea de investigación en competencias digitales en salud que queda instalada en la institución, e indicadores por sede que el Departamento puede poner a disposición de cada Vicerrectoría.",
@@ -191,5 +191,5 @@ def resumen(ruta):
 if __name__ == "__main__":
     salida = Path(sys.argv[1])
     salida.mkdir(parents=True, exist_ok=True)
-    decreto(salida / "decreto-depto-salud-digital-v0.5.docx")
+    decreto(salida / "decreto-depto-salud-digital-v0.6.docx")
     resumen(salida / "resumen-ejecutivo.docx")
