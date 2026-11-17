@@ -57,3 +57,12 @@ Criterios, dados por la titular el 2026-11-14: en los vistos, solo documentos ve
 - [PROPUESTA] El decreto habla de "desempeños" y la presentación de "competencias". Conviene decirlo una vez en voz alta: las competencias son el marco de investigación; los desempeños, lo que se pide en los perfiles de egreso.
 - [PROPUESTA] Si la titular quiere que el Área de Docencia diga también "calidad y trazabilidad", como lo describe en la presentación, se agrega al artículo 10.º. No se incluyó porque no estaba en el texto visto por el Consejo.
 - [HECHO] La numeración de los 13 artículos y los 3 transitorios no cambió, así que la lámina "Cada artículo, en su lugar del organigrama" sigue siendo válida. Fuente: entregables/2026-11-14-presentacion-vicerrector/presentacion-vicerrector.pdf (revisado 2026-11-14)
+
+## De v0.4 a v0.5 (2026-11-17)
+
+| Artículo | Cambio | Motivo |
+|---|---|---|
+| 10.º Las Áreas | Se agrega: "Ambas Áreas resguardarán la calidad y la trazabilidad de los procesos a su cargo, conforme a los mecanismos de aseguramiento de la calidad de la Facultad y de la Universidad." | Pedido por la titular. El documento de funciones del cargo dedica un bloque a calidad y mejora continua (funciones 27 a 31) y el decreto no la mencionaba. |
+
+- [HECHO] Las funciones del cargo incluyen gestionar las actividades del Departamento conforme al Modelo de Gestión de Calidad de la Facultad, en coordinación con la Dirección de Aseguramiento de la Calidad de la Facultad. Fuente: "Funciones del director(a) del Departamento de Salud Digital", documento entregado por la titular (leído 2026-11-17)
+- [PROPUESTA] La frase se aplicó a las dos Áreas y no solo a Docencia, porque las funciones del cargo piden calidad en los procesos académicos, de investigación y de vinculación con el medio. Están pendientes las observaciones de la Decana, que se incorporarán a esta misma versión.

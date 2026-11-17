@@ -1,4 +1,4 @@
-"""Genera el decreto v0.4 y el resumen ejecutivo en Word.
+"""Genera el decreto v0.5 y el resumen ejecutivo en Word.
 
 Uso: python3 generar_decreto.py <carpeta_salida>
 Base: Decreto_Depto_SD_v0.3_borrador.docx (Drive de la titular, 2026-11-11).
@@ -56,7 +56,7 @@ def titulo(d, texto, tam=11, color=None, centro=False, antes=10):
     return par
 
 
-# ───────────────────────── Decreto v0.4 ─────────────────────────
+# ───────────────────────── Decreto v0.5 ─────────────────────────
 
 VISTOS = [
     "El Proyecto Educativo de la Universidad San Sebastián, su Plan de Desarrollo Institucional 2022–2029 y el Plan Estratégico de la Facultad de Ciencias para el Cuidado de la Salud 2025–2029;",
@@ -88,7 +88,7 @@ ORGANIZACION = [
     ("7.º", "El Departamento Nacional de Salud Digital formará parte y dependerá administrativa y académicamente de la Facultad de Ciencias para el Cuidado de la Salud. Constituye una unidad académica única de carácter nacional, integrada por la Dirección Nacional, el Área de Docencia, el Área de Proyectos, las Coordinaciones de Sede y sus académicos, y contará con un Comité Consultivo. Las Áreas y las Coordinaciones de Sede son instancias internas de gestión del Departamento y no constituyen unidades académicas ni autoridades unipersonales en los términos de los artículos 1 y 9 del Reglamento de Unidades Académicas.", []),
     ("8.º", "El Departamento estará a cargo de un Director o Directora Nacional, designado conforme al Reglamento de Unidades Académicas, quien, bajo la autoridad del Decano o Decana, será el directivo académico responsable de conducir el Departamento y de ejecutar los acuerdos de la Facultad en las materias de su competencia. En caso de ausencia o impedimento, será subrogado por la Jefatura de Área que designe el Decano o Decana, a propuesta de la Dirección Nacional.", []),
     ("9.º", "El Departamento contará con un Comité Consultivo, que asesorará a la Dirección Nacional en la planificación y el seguimiento de su quehacer. Estará integrado por el Director o Directora Nacional, quien lo presidirá, las Jefaturas de Área y los Coordinadores de Sede. El Comité sesionará periódicamente, en forma ordinaria o ampliada según las materias a tratar; a las sesiones ampliadas se convocará a representantes de las Escuelas y de las Facultades con las que se articula el Departamento, en especial de las disciplinas de ingeniería y derecho. Sus actas se remitirán a la Secretaría General conforme al artículo 27 del Reglamento de Unidades Académicas.", []),
-    ("10.º", "El Área de Docencia, que comprende el pregrado, el postgrado y la educación continua, tendrá por objeto el seguimiento, el análisis comparado y la formulación de propuestas para robustecer, mejorar y actualizar la formación en salud digital. El Área de Proyectos, que comprende la línea basal, la investigación y la vinculación con el medio, tendrá a su cargo la gestión de las líneas y los proyectos del Departamento en esas materias, en coordinación con las Vicerrectorías y unidades institucionales competentes. Cada Área estará a cargo de una Jefatura.", []),
+    ("10.º", "El Área de Docencia, que comprende el pregrado, el postgrado y la educación continua, tendrá por objeto el seguimiento, el análisis comparado y la formulación de propuestas para robustecer, mejorar y actualizar la formación en salud digital. El Área de Proyectos, que comprende la línea basal, la investigación y la vinculación con el medio, tendrá a su cargo la gestión de las líneas y los proyectos del Departamento en esas materias, en coordinación con las Vicerrectorías y unidades institucionales competentes. Ambas Áreas resguardarán la calidad y la trazabilidad de los procesos a su cargo, conforme a los mecanismos de aseguramiento de la calidad de la Facultad y de la Universidad. Cada Área estará a cargo de una Jefatura.", []),
     ("11.º", "En cada sede de la Universidad existirá una Coordinación de Sede del Departamento, a cargo de un Coordinador o Coordinadora que dependerá de la Dirección Nacional y seguirá los lineamientos técnicos de las Áreas en sus respectivas materias. Le corresponderá representar al Departamento en la sede y realizar el seguimiento, el monitoreo y el levantamiento de indicadores locales de su quehacer, velando por la equivalencia de la formación entre sedes.", []),
     ("12.º", "Las Jefaturas de Área y los Coordinadores de Sede serán designados por el Decano o Decana, a propuesta de la Dirección Nacional.", []),
     ("13.º", "Integrarán el Departamento los académicos adscritos a él y los académicos de otras unidades académicas de la Universidad que participen en sus actividades conforme a lo acordado con su unidad de origen.", []),
@@ -103,7 +103,7 @@ TRANSITORIOS = [
 
 def decreto(ruta):
     d = nuevo("Cambria", 11)
-    p(d, "Propuesta de decreto · versión 0.4 · documento de trabajo", WD_ALIGN_PARAGRAPH.RIGHT, color=GRIS, tam=9)
+    p(d, "Propuesta de decreto · versión 0.5 · documento de trabajo", WD_ALIGN_PARAGRAPH.RIGHT, color=GRIS, tam=9)
     titulo(d, "DECRETO DE RECTORÍA N.º [●]", 13, centro=True, antes=6)
     p(d, "Santiago, [●]", WD_ALIGN_PARAGRAPH.RIGHT)
     p(d, [("MATERIA: ", True), ("Oficializa la creación del Departamento Nacional de Salud Digital, adscrito a la Facultad de Ciencias para el Cuidado de la Salud de la Universidad San Sebastián.", False)])
@@ -191,5 +191,5 @@ def resumen(ruta):
 if __name__ == "__main__":
     salida = Path(sys.argv[1])
     salida.mkdir(parents=True, exist_ok=True)
-    decreto(salida / "decreto-depto-salud-digital-v0.4.docx")
+    decreto(salida / "decreto-depto-salud-digital-v0.5.docx")
     resumen(salida / "resumen-ejecutivo.docx")
