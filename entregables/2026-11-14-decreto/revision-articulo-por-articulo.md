@@ -84,3 +84,8 @@ Criterios, dados por la titular el 2026-11-14: en los vistos, solo documentos ve
 
 - [HIPÓTESIS] Llamar "Direcciones" y "Directores" a estas instancias puede chocar con la frase del artículo 7.º que dice que no constituyen "autoridades unipersonales" según los artículos 1 y 9 del Reglamento de Unidades Académicas. Lo confirmaría leer esos artículos o consultarlo a Secretaría General; en esta sesión no se abrió el Reglamento.
 - [PROPUESTA] Para el nombre genérico se usó "Direcciones de área", una de las tres formas que aparecen en la presentación ("por área", "de áreas", "de área"). Conviene dejar una sola en ambos documentos.
+
+## v0.6 iterada por la titular (2026-11-17)
+
+- [HECHO] El archivo `decreto-depto-salud-digital-v0.6.docx` de esta carpeta es desde hoy la versión editada por la titular, no la que produce `generar_decreto.py`; el generador quedó desactualizado. Fuente: titular del cargo (conversación 2026-11-17)
+- [HECHO] Cambios respecto de la v0.6 generada: gobernanza como ítem del artículo 1.º; se quita "en especial la ingeniería y el derecho" (artículos 2.º y 9.º); el marco de desempeños "se pone a disposición" de las carreras (3.º b); el Departamento "estará disponible para ser consultado" (4.º); "línea basal de investigación y proyectos, de carácter permanente" (5.º); se elimina del 7.º la frase sobre unidades académicas y autoridades unipersonales, por indicación de la Decana; el Comité Consultivo es "instancia de articulación interna" (9.º); la Dirección de Sede mantiene la relación con las carreras y levanta la identidad local (11.º); quedan dos transitorios, sin el de la designación de la Dirección Nacional. Fuente: decreto-depto-salud-digital-v0.6.docx entregado por la titular (leído 2026-11-17)
