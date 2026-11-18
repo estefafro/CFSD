@@ -58,29 +58,26 @@ def vin(d, negrita, resto=""):
     texto(p, resto)
 
 
-TITULO = "La ley ya lo dice. Ahora tienen que conversar los sistemas"
+TITULO = "Para llegar a 2030 hay que empezar en enero"
 COLUMNA = [
-    "A casi todos nos ha pasado. Llegamos a una consulta con una carpeta de exámenes bajo el brazo, o le repetimos a un médico nuevo la misma historia que ya les contamos a otros tres: qué remedios tomamos, de qué nos operaron, a qué somos alérgicos. Y si el examen quedó en otra clínica o en otro hospital, muchas veces toca hacerlo de nuevo.",
-    "No es falta de voluntad de quienes nos atienden. Es que nuestra información de salud vive en sistemas que no conversan entre sí. Lo que se anotó en el consultorio muchas veces no se ve desde la urgencia del hospital, y lo de la clínica tampoco se ve desde el consultorio. Quien termina llevando los datos de un lado a otro es la persona enferma.",
-    "Chile ya decidió que esto tiene que cambiar. En mayo de 2024 se publicó la Ley 21.668, que modificó la ley de derechos y deberes de los pacientes. Dice que la ficha clínica existe para permitir “una atención continua, coordinada y centrada en las personas”, y hace responsables a los prestadores de salud, públicos y privados, de adoptar las medidas para que la información de sus fichas esté disponible para el profesional que nos atiende, aunque trabaje en otro lugar. La palabra técnica es interoperabilidad. En simple: que la información siga al paciente, y no al revés.",
-    "Pero una ley no conecta sistemas. Eso lo hacen personas: equipos de informática, de enfermería, de medicina y de gestión que tienen que ponerse de acuerdo en algo tan básico como anotar los datos de la misma manera, y después probar que funciona. Probarlo antes, no el día en que el paciente llega a la urgencia.",
-    "Para eso existe la Connectathon. El nombre suena raro, pero la idea es sencilla: durante unos días, equipos de hospitales, empresas, universidades e instituciones públicas se sientan en la misma sala, conectan sus sistemas de verdad y comprueban si logran intercambiar información en un idioma común. Lo que falla se corrige ahí mismo. En la edición de este año participaron más de 60 equipos, y uno de los sistemas que se validaron allí, para gestionar los tiempos de espera de cirugías, entró en operación a mediados de año en el Hospital de Quilpué.",
-    "Las personas son también lo que más falta. Quienes hoy estudian una carrera de la salud van a trabajar toda su vida con fichas electrónicas, atención a distancia y datos. No todos se van a dedicar a la salud digital, y está bien, pero nadie puede quedar fuera. En la Universidad San Sebastián, [este semestre 1.788 estudiantes de cuatro carreras cursan la asignatura Salud Digital en cuatro sedes].",
-    "Por eso me alegra contar que la Universidad San Sebastián será sede de la próxima Connectathon, que se realizará del 12 al 14 de enero de 2027 en nuestro Campus Bellavista, en Santiago, organizada por HL7 Chile con la colaboración de Fonasa y CENS. La participación es gratuita, con inscripción previa.",
-    "Abrimos las puertas porque creemos que la universidad es el lugar natural para este trabajo: aquí se forman quienes van a cuidar, y aquí pueden sentarse a probar sus sistemas quienes ya los construyen. La ley fijó el rumbo. En enero nos toca ponernos a trabajar.",
+    "Quien se atiende en un consultorio y después en un hospital conoce la escena: la carpeta de exámenes bajo el brazo y la misma historia contada otra vez a un profesional nuevo. Cuando el examen quedó en otro lugar, muchas veces toca repetirlo. Mientras tanto, la espera corre: al 31 de marzo de este año, la mitad de las personas que aguardaban una cirugía en el sistema público llevaba más de 259 días en la lista, según el informe del Ministerio de Salud al Congreso.",
+    "Chile ya tomó decisiones para cambiar esa escena. Desde mayo de 2024, la Ley 21.668 establece que la ficha clínica debe permitir “una atención continua, coordinada y centrada en las personas”, y hace responsables a los prestadores, públicos y privados, de que esa información esté disponible para el profesional que nos atiende, aunque trabaje en otro establecimiento. En septiembre, el Ministerio de Salud presentó siete proyectos de transformación digital, entre ellos una Historia Clínica Compartida y el apoyo digital a la gestión de las listas de espera. El horizonte que se fijó es 2030: para entonces, los sistemas de todos los establecimientos deberían poder compartir información.",
+    "Es una buena noticia y una meta exigente. Cuatro años pasan rápido cuando hay que lograr que sistemas muy distintos, de hospitales, consultorios, clínicas y laboratorios, anoten los datos de la misma manera y se entiendan entre sí. A eso se suma un cuidado que hoy cruza todos los sectores y del que la salud tampoco queda fuera: la información que se comparte tiene que circular protegida.",
+    "Una meta así se alcanza practicando, y para eso existe la Connectathon. Durante unos días, equipos de hospitales, empresas, universidades e instituciones públicas se sientan en la misma sala, conectan sus sistemas reales y comprueban si logran intercambiar información en un idioma común. Lo que falla se corrige ahí mismo. En la edición de este año participaron más de 60 equipos, y uno de los sistemas validados allí, para gestionar los tiempos de espera de cirugías, entró en operación a mediados de año en el Hospital de Quilpué. Lo que se ensaya en esa sala llega después a los pacientes.",
+    "La otra mitad del camino son las personas. Cada dato que viaja entre un consultorio y un hospital fue registrado por alguien del equipo de salud. Que ese registro sea completo, comprensible para otro equipo y cuidadoso con la privacidad es hoy parte de saber cuidar. Por eso la salud digital tiene que estar en la formación de todas las carreras de la salud, también de quienes nunca van a trabajar en informática. En la Universidad San Sebastián, [este semestre 1.788 estudiantes de cuatro carreras cursan la asignatura Salud Digital en cuatro sedes].",
+    "Por eso me alegra contar que la Universidad San Sebastián será sede de la próxima Connectathon, del 12 al 14 de enero de 2027, en nuestro Campus Bellavista, en Santiago. La organiza HL7 Chile, [con la colaboración de Fonasa y CENS], y la participación es gratuita, con inscripción previa.",
+    "La universidad es un buen lugar para este trabajo: aquí se forman quienes van a cuidar, y aquí pueden sentarse a probar sus sistemas quienes ya los construyen, junto a las instituciones públicas que fijan el rumbo. 2030 está a cuatro eneros de distancia. El primero es este.",
 ]
 
 
 def columna(salida):
     d = nuevo()
-    h1(d, "Columna de opinión sobre la Connectathon: borrador 2")
+    h1(d, "Columna de opinión sobre la Connectathon: borrador 3")
     par(d, "Para iterar con Comunicaciones USS. 18 de noviembre de 2026. Lo resaltado entre corchetes depende de datos por confirmar.", cursiva=True, color=GRIS, tam=10)
-    h2(d, "Tres enfoques posibles")
-    vin(d, "A. Desde el paciente (recomendado): ", "la ley ya manda que la información siga a la persona; la Connectathon es donde eso se prueba de verdad.")
-    vin(d, "B. Desde la formación: ", "la interoperabilidad la hacen personas, y la universidad es donde se forman; por eso la Connectathon llega a un campus.")
-    vin(d, "C. Desde la región: ", "las Américas están conectando su salud y Chile no parte de cero; la Connectathon es el paso local de esa ruta.")
-    par(d, "Recomiendo el A: parte de algo que cualquier lector ha vivido, explica la ley sin jerga y deja el anuncio como consecuencia natural. Recoge del B el párrafo sobre los estudiantes.")
-    h2(d, "Borrador (enfoque A)")
+    h2(d, "Idea y hilo conductor")
+    par(d, "Idea única: el país ya tiene ley, proyectos y una meta a 2030; para llegar hacen falta práctica y personas formadas, y ambas se juntan en enero en la USS.")
+    par(d, "El hilo es el camino hacia 2030. Cada párrafo es un paso: la escena que vive el paciente, lo que el país ya decidió, por qué la meta es exigente, cómo se practica (Connectathon), quiénes la hacen posible (formación) y el anuncio. El cierre vuelve a 2030 y a enero.")
+    h2(d, "Borrador")
     par(d, TITULO, negrita=True, color=NAVY, tam=15)
     for t in COLUMNA:
         par(d, t)
@@ -88,25 +85,28 @@ def columna(salida):
     n = sum(len(re.sub(r"[\[\]]", "", t).split()) for t in COLUMNA)
     par(d, f"Extensión: {n} palabras sin título ni firma.", color=GRIS, tam=10)
     h2(d, "Qué falta confirmar")
-    vin(d, "Datos de la Connectathon. ", "Confirmados por ti el 18 de noviembre: son los del sitio de HL7 Chile.")
-    vin(d, "La ley. ", "Usé la Ley 21.668, leída en el Diario Oficial del 28 de mayo de 2024. Falta confirmar que es la que Gabriela tiene en mente.")
-    vin(d, "Reglamento. ", "La ley dio 18 meses al Ministerio de Salud para actualizar el reglamento de fichas clínicas. El resumen que pegaste dice que el plazo venció y el reglamento sigue pendiente; lo mismo dicen una columna de abogados en EstadoDiario (20 de octubre de 2026) y un blog comercial, pero ninguno cita una fuente oficial y LeyChile no dejó leerse. Por eso la columna no lo afirma. Si lo confirmas con el Ministerio o con HL7 Chile, se puede agregar al cuarto párrafo: [“El reglamento que debe fijar las reglas comunes todavía está pendiente”]. Es una frase que apunta al Ministerio: conviene decidirla con la Decana.")
-    vin(d, "Ley de datos personales. ", "No la menciono. El resumen que pegaste dice que rige desde el 1 de diciembre de 2026, pero al 11 de noviembre el Congreso tramitaba postergarla a octubre de 2027 y hoy no pude leer el sitio de la Cámara para ver en qué quedó.")
+    vin(d, "Fonasa. ", "El sitio de HL7 Chile muestra a Fonasa bajo “Colaboran”, junto a la USS y CENS, y no bajo “Auspician”. Dejé “colaboración” resaltado hasta que confirmes cómo nombrarlo.")
     vin(d, "Cifra de estudiantes. ", "Los 1.788 estudiantes vienen de tu informe con datos de Blackboard al 25 de septiembre de 2026. Falta confirmar que puede publicarse.")
-    vin(d, "Medio, extensión y plazo. ", "Escribí para 500 a 600 palabras. Si el medio pide menos, el párrafo más fácil de cortar es el de los estudiantes.")
-    vin(d, "Firma. ", "Firmas tú (confirmado el 18 de noviembre).")
-    vin(d, "Departamento Nacional de Salud Digital. ", "No se menciona, porque está en trámite.")
+    vin(d, "Cifra de espera. ", "Los 259 días son la mediana de espera de cirugías No GES al 31 de marzo de 2026, del informe más reciente publicado por el Ministerio. Si sale uno nuevo antes de la entrega, hay que actualizarla.")
+    vin(d, "Medio, extensión y plazo. ", "Si el medio pide menos de 550 palabras, lo más fácil de cortar es el tercer párrafo.")
+    h2(d, "Decisiones de este borrador")
+    vin(d, "Seguridad de datos: ", "queda en una frase del tercer párrafo, sin mencionar la ley de datos personales ni el ciberataque.")
+    vin(d, "Ministerio de Salud: ", "se nombra su agenda de septiembre y la meta de 2030 como punto de partida, en tono de apoyo.")
+    vin(d, "Reglamento de la Ley 21.668: ", "no se menciona; no pude confirmar su estado en fuente oficial.")
+    vin(d, "Departamento Nacional de Salud Digital: ", "no se menciona, porque está en trámite.")
     h2(d, "Fuentes de lo que se afirma")
     for a, b in [
+        ("259 días de espera: ", "Ministerio de Salud, informe Glosa 06 del primer trimestre de 2026."),
         ("Ley 21.668 y cita textual: ", "Diario Oficial, 28 de mayo de 2024, núm. 43.861."),
         ("“Públicos y privados”: ", "nota del Ministerio de Salud del 28 de mayo de 2024."),
+        ("Siete proyectos y meta 2030: ", "comunicado del Ministerio de Salud del 2 de septiembre de 2026."),
         ("Más de 60 equipos en 2026: ", "nota de CENS del 22 de enero de 2026."),
         ("Sistema en operación en el Hospital de Quilpué: ", "nota de HL7 Chile del 3 de julio de 2026."),
         ("Connectathon 2027: ", "hl7chile.cl/fhir-connectathon-hl7-2027, leído el 17 de noviembre de 2026."),
     ]:
         vin(d, a, b)
-    par(d, "Las direcciones completas están en fuentes.md, en la misma carpeta.", color=GRIS, tam=10)
-    d.save(salida / "columna-borrador-2.docx")
+    par(d, "Las direcciones completas están en fuentes.md e investigacion-dolores.md, en la misma carpeta.", color=GRIS, tam=10)
+    d.save(salida / "columna-borrador-3.docx")
     return n
 
 
