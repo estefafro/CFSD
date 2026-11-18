@@ -66,15 +66,15 @@ COLUMNA = [
     "Pero una ley no conecta sistemas. Eso lo hacen personas: equipos de informática, de enfermería, de medicina y de gestión que tienen que ponerse de acuerdo en algo tan básico como anotar los datos de la misma manera, y después probar que funciona. Probarlo antes, no el día en que el paciente llega a la urgencia.",
     "Para eso existe la Connectathon. El nombre suena raro, pero la idea es sencilla: durante unos días, equipos de hospitales, empresas, universidades e instituciones públicas se sientan en la misma sala, conectan sus sistemas de verdad y comprueban si logran intercambiar información en un idioma común. Lo que falla se corrige ahí mismo. En la edición de este año participaron más de 60 equipos, y uno de los sistemas que se validaron allí, para gestionar los tiempos de espera de cirugías, entró en operación a mediados de año en el Hospital de Quilpué.",
     "Las personas son también lo que más falta. Quienes hoy estudian una carrera de la salud van a trabajar toda su vida con fichas electrónicas, atención a distancia y datos. No todos se van a dedicar a la salud digital, y está bien, pero nadie puede quedar fuera. En la Universidad San Sebastián, [este semestre 1.788 estudiantes de cuatro carreras cursan la asignatura Salud Digital en cuatro sedes].",
-    "Por eso me alegra contar que la Universidad San Sebastián será sede de la próxima Connectathon, que se realizará [del 12 al 14 de enero de 2027] en [nuestro Campus Bellavista, en Santiago], [organizada por HL7 Chile con la colaboración de Fonasa y CENS]. [La participación es gratuita, con inscripción previa.]",
+    "Por eso me alegra contar que la Universidad San Sebastián será sede de la próxima Connectathon, que se realizará del 12 al 14 de enero de 2027 en nuestro Campus Bellavista, en Santiago, organizada por HL7 Chile con la colaboración de Fonasa y CENS. La participación es gratuita, con inscripción previa.",
     "Abrimos las puertas porque creemos que la universidad es el lugar natural para este trabajo: aquí se forman quienes van a cuidar, y aquí pueden sentarse a probar sus sistemas quienes ya los construyen. La ley fijó el rumbo. En enero nos toca ponernos a trabajar.",
 ]
 
 
 def columna(salida):
     d = nuevo()
-    h1(d, "Columna de opinión sobre la Connectathon: borrador 1")
-    par(d, "Para iterar con Comunicaciones USS. 17 de noviembre de 2026. Lo resaltado entre corchetes depende de datos por confirmar.", cursiva=True, color=GRIS, tam=10)
+    h1(d, "Columna de opinión sobre la Connectathon: borrador 2")
+    par(d, "Para iterar con Comunicaciones USS. 18 de noviembre de 2026. Lo resaltado entre corchetes depende de datos por confirmar.", cursiva=True, color=GRIS, tam=10)
     h2(d, "Tres enfoques posibles")
     vin(d, "A. Desde el paciente (recomendado): ", "la ley ya manda que la información siga a la persona; la Connectathon es donde eso se prueba de verdad.")
     vin(d, "B. Desde la formación: ", "la interoperabilidad la hacen personas, y la universidad es donde se forman; por eso la Connectathon llega a un campus.")
@@ -84,17 +84,17 @@ def columna(salida):
     par(d, TITULO, negrita=True, color=NAVY, tam=15)
     for t in COLUMNA:
         par(d, t)
-    par(d, "[Firma: Estefanía Fröhlich, Directora del Departamento de Salud Digital, Facultad de Ciencias para el Cuidado de la Salud, Universidad San Sebastián]", cursiva=True)
+    par(d, "Estefanía Fröhlich, Directora del Departamento de Salud Digital, Facultad de Ciencias para el Cuidado de la Salud, Universidad San Sebastián", cursiva=True)
     n = sum(len(re.sub(r"[\[\]]", "", t).split()) for t in COLUMNA)
     par(d, f"Extensión: {n} palabras sin título ni firma.", color=GRIS, tam=10)
     h2(d, "Qué falta confirmar")
-    vin(d, "Datos de la Connectathon. ", "Fecha, campus, organizador y colaboradores están tomados del sitio de HL7 Chile (hl7chile.cl, leído el 17 de noviembre). Falta que confirmes que es esa la Connectathon, que los datos son definitivos y cómo se nombra el rol de la USS: el sitio la muestra como sede y colaboradora.")
+    vin(d, "Datos de la Connectathon. ", "Confirmados por ti el 18 de noviembre: son los del sitio de HL7 Chile.")
     vin(d, "La ley. ", "Usé la Ley 21.668, leída en el Diario Oficial del 28 de mayo de 2024. Falta confirmar que es la que Gabriela tiene en mente.")
     vin(d, "Reglamento. ", "La ley dio 18 meses al Ministerio de Salud para actualizar el reglamento de fichas clínicas. El resumen que pegaste dice que el plazo venció y el reglamento sigue pendiente; lo mismo dicen una columna de abogados en EstadoDiario (20 de octubre de 2026) y un blog comercial, pero ninguno cita una fuente oficial y LeyChile no dejó leerse. Por eso la columna no lo afirma. Si lo confirmas con el Ministerio o con HL7 Chile, se puede agregar al cuarto párrafo: [“El reglamento que debe fijar las reglas comunes todavía está pendiente”]. Es una frase que apunta al Ministerio: conviene decidirla con la Decana.")
     vin(d, "Ley de datos personales. ", "No la menciono. El resumen que pegaste dice que rige desde el 1 de diciembre de 2026, pero al 11 de noviembre el Congreso tramitaba postergarla a octubre de 2027 y hoy no pude leer el sitio de la Cámara para ver en qué quedó.")
     vin(d, "Cifra de estudiantes. ", "Los 1.788 estudiantes vienen de tu informe con datos de Blackboard al 25 de septiembre de 2026. Falta confirmar que puede publicarse.")
     vin(d, "Medio, extensión y plazo. ", "Escribí para 500 a 600 palabras. Si el medio pide menos, el párrafo más fácil de cortar es el de los estudiantes.")
-    vin(d, "Firma. ", "Está en tu voz. Si firma la Decana, cambian tres cosas: el párrafo de los estudiantes habla de toda la Facultad, “me alegra contar” pasa a un anuncio institucional, y conviene que la Decana revise el cierre.")
+    vin(d, "Firma. ", "Firmas tú (confirmado el 18 de noviembre).")
     vin(d, "Departamento Nacional de Salud Digital. ", "No se menciona, porque está en trámite.")
     h2(d, "Fuentes de lo que se afirma")
     for a, b in [
@@ -106,7 +106,7 @@ def columna(salida):
     ]:
         vin(d, a, b)
     par(d, "Las direcciones completas están en fuentes.md, en la misma carpeta.", color=GRIS, tam=10)
-    d.save(salida / "columna-borrador-1.docx")
+    d.save(salida / "columna-borrador-2.docx")
     return n
 
 
