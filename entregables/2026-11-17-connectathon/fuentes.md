@@ -32,7 +32,8 @@ Revisadas el 2026-11-17. Lo que no pudo leerse se dice.
 
 - [HECHO] Al 31 de marzo de 2026, la mediana del tiempo de espera en la lista No GES fue de 259 días para intervenciones quirúrgicas y de 236 días para consultas nuevas de especialidad. Fuente: Ministerio de Salud, Informe Glosa 06 primer trimestre 2026 (Oficio CP N°15024/2026), resumen ejecutivo, https://www.minsal.cl/wp-content/uploads/2026/07/Glosa-06-letra-a-b-c-i-j-k-comun-a-la-partida-1er-trimestre-1.pdf (leído el PDF, consultado 2026-11-18)
 - [HECHO] La página de tiempos de espera del Minsal lista ese informe como el más reciente ("NUEVO 2026 ... Primer trimestre"); no aparece uno del segundo o tercer trimestre de 2026. Fuente: Minsal, https://www.minsal.cl/eje-tiempos-de-espera/ (consultado 2026-11-18)
-- [HIPÓTESIS] Puede existir un informe más reciente no enlazado en esa página. Lo confirmaría revisar la página el día de la entrega.
+- [HECHO] Existe un informe posterior, no enlazado en esa página: al 30 de junio de 2026 la mediana de espera fue de 277 días para intervenciones quirúrgicas y de 237 días para consultas nuevas de especialidad. Corrige la nota anterior: el informe de marzo no era el más reciente. Fuente: Ministerio de Salud, Informe Glosa 06 segundo trimestre 2026, resumen ejecutivo, https://www.minsal.cl/wp-content/uploads/2026/08/Glosa-06-LE-II-trimestre.pdf (leído el PDF, consultado 2026-11-18)
+- [PROPUESTA] La columna final (borrador 6) no usa cifras de espera; si se usan en el publirreportaje, tomar las del segundo trimestre o un informe posterior.
 
 ## Universidad
 
