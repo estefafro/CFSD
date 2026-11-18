@@ -111,6 +111,17 @@ def columna(salida):
     return n
 
 
+def entrega(salida):
+    """Versión limpia para Comunicaciones: solo título, texto y firma."""
+    d = nuevo()
+    par(d, TITULO, negrita=True, color=NAVY, tam=16)
+    for t in COLUMNA:
+        par(d, t)
+    par(d, "Estefanía Fröhlich", negrita=True)
+    par(d, "Directora del Departamento de Salud Digital, Facultad de Ciencias para el Cuidado de la Salud, Universidad San Sebastián", cursiva=True)
+    d.save(salida / "columna-para-comunicaciones.docx")
+
+
 def publirreportaje(salida):
     d = nuevo()
     h1(d, "Publirreportaje en La Tercera Digital: estructura e insumos")
@@ -146,4 +157,5 @@ def publirreportaje(salida):
 if __name__ == "__main__":
     salida = Path(sys.argv[1])
     print("palabras columna:", columna(salida))
+    entrega(salida)
     publirreportaje(salida)
