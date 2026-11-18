@@ -28,6 +28,12 @@ Revisadas el 2026-11-17. Lo que no pudo leerse se dice.
 - [HECHO] Un sistema validado en la Connectathon 2026, SITGEQ (gestión de tiempos de espera quirúrgicos), entró en operación en el Hospital de Quilpué. Fuente: HL7 Chile, 2026-07-03, https://hl7chile.cl/sistema-validado-en-la-connectathon-hl7-chile-2026-entra-en-operacion-en-el-hospital-de-quilpue/ (consultado 2026-11-17)
 - [HIPÓTESIS] La Connectathon que pide promover Comunicaciones es esta de HL7 Chile. Lo confirma la titular. La página antigua https://hl7chile.cl/fhir-connectathon-2026/ da error 404.
 
+## Listas de espera
+
+- [HECHO] Al 31 de marzo de 2026, la mediana del tiempo de espera en la lista No GES fue de 259 días para intervenciones quirúrgicas y de 236 días para consultas nuevas de especialidad. Fuente: Ministerio de Salud, Informe Glosa 06 primer trimestre 2026 (Oficio CP N°15024/2026), resumen ejecutivo, https://www.minsal.cl/wp-content/uploads/2026/07/Glosa-06-letra-a-b-c-i-j-k-comun-a-la-partida-1er-trimestre-1.pdf (leído el PDF, consultado 2026-11-18)
+- [HECHO] La página de tiempos de espera del Minsal lista ese informe como el más reciente ("NUEVO 2026 ... Primer trimestre"); no aparece uno del segundo o tercer trimestre de 2026. Fuente: Minsal, https://www.minsal.cl/eje-tiempos-de-espera/ (consultado 2026-11-18)
+- [HIPÓTESIS] Puede existir un informe más reciente no enlazado en esa página. Lo confirmaría revisar la página el día de la entrega.
+
 ## Universidad
 
 - [HECHO] FACU0004 Salud Digital tiene 1.788 estudiantes en 31 secciones, 4 carreras y 4 sedes en el periodo 202620. Fuente: entregables/2026-11-14-presentacion-vicerrector/fuentes-cifras.md, que cita el informe de docentes de la titular con datos de Blackboard al 2026-09-25 (consultado 2026-11-17)
