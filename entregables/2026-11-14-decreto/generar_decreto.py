@@ -189,6 +189,9 @@ def resumen(ruta):
 
 
 if __name__ == "__main__":
+    sys.exit("DESACTUALIZADO: desde el 2026-11-17 la versión vigente del decreto es la editada por la titular "
+             "(decreto-depto-salud-digital-v0.6.docx). Este generador produce un texto anterior y la sobrescribiría. "
+             "Ver produccion/guia/ (registro-decreto).")
     salida = Path(sys.argv[1])
     salida.mkdir(parents=True, exist_ok=True)
     decreto(salida / "decreto-depto-salud-digital-v0.6.docx")
